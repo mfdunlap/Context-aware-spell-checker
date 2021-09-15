@@ -3,16 +3,16 @@ import spellchecker
 from textblob import TextBlob
 import re
 
-import contextualSpellCheck
+#import contextualSpellCheck
 import spacy
 import en_core_web_sm
 
 # Main
-def simpleChecker():
+def simpleCheckerFile(filepath):
     
     # Read file
-    file1="./backend-features/words.txt"
-    with open(file1,"r+") as filehandle:
+    #file1="./backend-features/words.txt"
+    with open(filepath,"r+") as filehandle:
         filecontent=filehandle.read()
         print("Original Text:\n", str(filecontent))
         # Convert the text into a TextBlob object
@@ -35,6 +35,25 @@ def simpleChecker():
         # Get a list of `likely` options
         print("Candidate words:",spell.candidates(word))
 
+def simpleChecker(text):
+    
+    # Read file
+    print("Original Text:\n", str(text))
+    # Remove punctuation using regex
+    s = re.sub(r'[^\w\s]','', text)
+    print("Text without punctuations:\n",s)
+    wordlist=s.split()
+    spell = SpellChecker()
+    misspelled = list(spell.unknown(wordlist))
+    print("Possible list of misspelled words in the original text:\n",misspelled)
+
+    # Use pyspellchecker to correct the word and list candidates
+    for word in misspelled:
+        # Get the one `most likely` answer
+        print("Correct word:",spell.correction(word))
+        # Get a list of `likely` options
+        print("Candidate words:",spell.candidates(word))
+"""
 def BERTchecker():
 
     nlp = spacy.load("en_core_web_sm")
@@ -69,9 +88,8 @@ def BERTchecker():
     print(doc._.score_spellCheck)
     
     #print(doc._.get_suggestion_spellCheck)
+"""
 
 
-
-simpleChecker()
+simpleChecker("Myy name is Lorenso what is yourg?")
 #BERTchecker()
-
