@@ -19,7 +19,7 @@
    <body>
        <!-- Format Navigation Bar -->
        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-           <a class="navbar-brand" href="#">Context Aware Spell Checker</a>
+           <a class="navbar-brand" href="{{url_for('default_page')}}">Context Aware Spell Checker</a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,20 +31,67 @@
                         <a class="nav-link" href="{{url_for('default_page')}}">English <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language2</a>
+                        <a class="nav-link" href="{{url_for('french_page')}}">French</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language3</a>
+                        <a class="nav-link" href="{{url_for('german_page')}}">German</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language4</a>
+                        <a class="nav-link" href="{{url_for('portuguese_page')}}">Portuguese</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('spanish_page')}}">Spanish</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
+        <!-- Set up Flash Messages Display -->
+        {%with messages = get_flashed_messages(with_categories=true)%}
+            {%if messages%}
+                {%for category, message in messages%}
+                    <div class="alert alert-{{category}}">
+                        <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{message}}
+                    </div>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+
+        <body class="text-center">
+            <br>
+            
+            <h2>
+                {%block pageTitle%}
+  
+                {%endblock%}
+  
+            </h2>
+  
+            <br>
+            <form action="{{ url_for('submit') }}" method="post">
+                  <textarea name="message" placeholder="{%block placeholder%}{%endblock%}" style="width:80%; height: 350px;; background-color: #212121; color: white;"></textarea>
+                  <br>
+                  <input type="submit" value="{%block submitTextBtn%}{%endblock%}">
+
+                  <br>
+                  
+              </form>
+  
+              <br>
+  
+              <form action="{{ url_for('submit') }}" method="post">
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="myfile" name="myfile">
+            </form>
+  
+          </body>
+
       <!-- Create Variable Space for Future Content -->
       {%block content%}
+      
 
       {%endblock%}
       
