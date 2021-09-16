@@ -19,7 +19,7 @@
    <body>
        <!-- Format Navigation Bar -->
        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-           <a class="navbar-brand" href="#">Context Aware Spell Checker</a>
+           <a class="navbar-brand" href="{{url_for('default_page')}}">Context Aware Spell Checker</a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,13 +31,16 @@
                         <a class="nav-link" href="{{url_for('default_page')}}">English <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language2</a>
+                        <a class="nav-link" href="{{url_for('french_page')}}">French</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language3</a>
+                        <a class="nav-link" href="{{url_for('german_page')}}">German</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Language4</a>
+                        <a class="nav-link" href="{{url_for('portuguese_page')}}">Portuguese</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('spanish_page')}}">Spanish</a>
                     </li>
                 </ul>
             </div>
