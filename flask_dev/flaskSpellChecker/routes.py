@@ -1,6 +1,6 @@
 import requests
 from flaskSpellChecker import utils, app
-from flask import render_template, request
+from flask import render_template, request, flash, get_flashed_messages
 
 @app.route('/')
 @app.route('/home')
@@ -33,9 +33,9 @@ def submit():
             text = request.form['message']
             print(text)
             utils.simpleChecker(text)
+            flash(f'Text submitted to backend.', category='danger')
         except:
             errors.append("Unable to get text.")
-        #print(raw)
-    #return 'You entered: {}'.format(request.form['message'])
+            flash(f'Text was not submitted', category='danger')
     return render_template('english.html', errors=errors, results=results)
 
