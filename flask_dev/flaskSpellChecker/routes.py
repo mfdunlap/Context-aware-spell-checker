@@ -1,6 +1,5 @@
-#from werkzeug.wrappers import request
 import requests
-from spellChecker import utils, app
+from flaskSpellChecker import utils, app
 from flask import render_template, request
 
 @app.route('/')
