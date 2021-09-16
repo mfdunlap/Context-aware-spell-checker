@@ -1,2 +1,2 @@
 # Context-aware-spell-checker
-Class project for Principles of software developement
+Class project for Principles of software development.
