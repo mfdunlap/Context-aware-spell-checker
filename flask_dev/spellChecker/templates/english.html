@@ -8,15 +8,23 @@
     <body class="text-center">
         <h2>Temporary Text Box</h2>
 
-        <form action="{{ url_for('submit') }}" method="post">
-            <textarea name="message" style="width:80%; height:600px; background-color: #212121; color: white;">You can write text here.</textarea>
+        <!--form action="{{ url_for('submit') }}" method="post">
+            <textarea id="textArea" name="message" style="width:80%; height:600px; background-color: #212121; color: white;">You can write text here.</textarea>
             <br>
-            <input type="submit">
+            <input type="submit" id="submit">
+        </form>-->
+
+
+        <form>
+            <textarea id="textArea" name="message" style="width:80%; height:600px; background-color: #212121; color: white;">You can write text here.</textarea>
+            <br>
+            <input type="submit" id="submitText">
         </form>
+
 
         <br>
 
         <h2>Place File Uploader Here</h2>
-
+    
     </body>
 {%endblock%}
