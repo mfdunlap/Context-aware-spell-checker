@@ -1,5 +1,4 @@
 from spellchecker import SpellChecker
-import spellchecker
 from textblob import TextBlob
 import re
 

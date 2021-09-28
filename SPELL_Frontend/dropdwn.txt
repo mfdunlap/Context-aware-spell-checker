@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spell Checker</title>
+</head>
+
+<div class="navbar">
+ 
+  <div class="dropdown">
+    <button class="dropbtn">Select Languages
+	<script src="https://languagetool.org/js/_new/app.js?id=acb6775bfe135ee8cef7" defer></script>
+
+<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/oldceeleldhonbafppcapldpdifcinji">
+<link rel="search" type="application/opensearchdescription+xml" title="LanguageTool" href="/opensearch.xml">
+	<link rel="stylesheet" type="text/css" href="drpdwn css.css">
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <form action="file:///C:/Users/villasagaram/Desktop/SPELL/check.html">
+        <button class = ".gfg" type="submit">
+		<link rel="stylesheet" type="text/css" href="button.css">
+            English
+        </button>
+    </form>
+      <form action="file:///C:/Users/villasagaram/Desktop/SPELL/check.html">
+        <button class = ".gfg" type="submit">
+		<link rel="stylesheet" type="text/css" href="button.css">
+            Telugu
+        </button>
+    </form>
+     <form action="file:///C:/Users/villasagaram/Desktop/SPELL/check.html">
+        <button class = ".gfg" type="submit">
+		<link rel="stylesheet" type="text/css" href="button.css">
+            Hindi
+        </button>
+    </form>
+    </div>
+  </div>
+</div>
+
+</html>
