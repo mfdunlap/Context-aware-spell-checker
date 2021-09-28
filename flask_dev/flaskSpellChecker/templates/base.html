@@ -72,7 +72,7 @@
   
             <br>
             <form action="{{ url_for('submit') }}" method="post">
-                  <textarea name="message" placeholder="{%block placeholder%}{%endblock%}" style="width:80%; height: 350px;; background-color: #212121; color: white;"></textarea>
+                  <textarea id="textArea" name="message" placeholder="{%block placeholder%}{%endblock%}" style="width:80%; height: 350px;; background-color: #212121; color: white;"></textarea>
                   <br>
                   <input type="submit" value="{%block submitTextBtn%}{%endblock%}">
 
