@@ -56,11 +56,11 @@ def search():
         # Get the last mispelled word candidates
         if misspelled:
             last_mispelled = misspelled[len(misspelled)-1]
-            print("last mispelled : ", last_mispelled)
+            #print("last mispelled : ", last_mispelled)
             last_candidate = candidates[str(last_mispelled)]
             #print("last candidate : ", candidates[str(last_mispelled)])
             last_candidate = list([c for c in last_candidate])
-            print('last candidate : ', last_candidate)
+            #print('last candidate : ', last_candidate)
 
 
         #print("all mispelled : ", misspelled)
@@ -79,6 +79,6 @@ def search():
         filtered_dict = [v for v in json_data if term in v]
         #print(filtered_dict)
         resp = jsonify(last_candidate if misspelled else None)
-        print(resp)
+        #print(resp)
         resp.status_code = 200
         return resp
