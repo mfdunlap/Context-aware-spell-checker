@@ -12,6 +12,12 @@ def simpleChecker(text):
     wordlist=s.split()
     spell = SpellChecker()
     misspelled = list(spell.unknown(wordlist))
+    idxDict = dict()
+    for index, word in enumerate(wordlist):
+        if word in misspelled:
+            idxDict[word] = index
+
+    #print("DEBUG: ", idxDict)
     #print("Possible list of misspelled words in the original text:\n",misspelled)
 
     # Use pyspellchecker to correct the word and list candidates
@@ -24,7 +30,7 @@ def simpleChecker(text):
         candidates[word] = spell.candidates(word)
     
     #print(candidates)
-    return candidates, misspelled
+    return candidates, misspelled, idxDict
         
 
      

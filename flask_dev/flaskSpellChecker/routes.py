@@ -41,26 +41,28 @@ def submit():
     return render_template('english.html', errors=errors, results=results)
 
 @app.route('/', methods=['POST'])
-def search():
+def computeMispelledWords():
         """
         This function gets the text in the editor from the web page at https://localhost:5000/ and compute
         backend spell checker.
 
-        output: json of suggestions for the last mispelled word
+        output: json of suggestions for the mispelled words
         """
         # Retrieve test
-        term = request.form['q']
+        term = request.form['text']
         print('term: ', term)
-        # Get the mispelled and the candidates
-        candidates, misspelled = utils.simpleChecker(term)
+        # Index dictionary of misspelled words
+        idxDict = dict()
+        # Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
+        candidates, misspelled, idxDict = utils.simpleChecker(term)
         # Get the last mispelled word candidates
         if misspelled:
             last_mispelled = misspelled[len(misspelled)-1]
-            print("last mispelled : ", last_mispelled)
+            #print("last mispelled : ", last_mispelled)
             last_candidate = candidates[str(last_mispelled)]
             #print("last candidate : ", candidates[str(last_mispelled)])
             last_candidate = list([c for c in last_candidate])
-            print('last candidate : ', last_candidate)
+            #print('last candidate : ', last_candidate)
 
 
         #print("all mispelled : ", misspelled)
@@ -79,6 +81,13 @@ def search():
         filtered_dict = [v for v in json_data if term in v]
         #print(filtered_dict)
         resp = jsonify(last_candidate if misspelled else None)
-        print(resp)
+        #print(resp)
         resp.status_code = 200
         return resp
+
+@app.route('/', methods=['POST'])
+def test():
+    if request.method == "POST":
+     selected = request.json['data']
+     print('selected', selected)
+    return render_template('english.html')
