@@ -7,7 +7,7 @@ To include in your html code:
 */
 
 // Autocomplete function
-/*
+
 $(document).ready(function() {
     $("#textArea").autocomplete({
         source : function(request, response) {
@@ -17,7 +17,7 @@ $(document).ready(function() {
                 dataType : "json",
                 cache: false,
                 data : {
-                    q : request.term
+                    'text' : request.term
                 },
                 success : function(data) {
                     //alert(data);
@@ -32,10 +32,11 @@ $(document).ready(function() {
         minLength : 2
     });
 });
-*/
 
+
+/*
 // Get word by cursor selection
-$(document).ready(function() {
+//$(document).ready(function() {
     $("#textArea").on('click', function(e) {
         var text = document.getElementById("textArea").value,
         element = $("#textArea")[0],
@@ -58,23 +59,22 @@ $(document).ready(function() {
           }
         }
       }
-      $.ajax({
-        type: "POST",
-        url : "http://localhost:5000/",
-        dataType : "json",
-        cache: false,
-        data : {
-            q : selected
-        },
-        success : function(data) {
-            //alert(data);
-            //console.log(data);
-            response(data);
-        },
-    });
+      // Ajax integration: selected word is forwarded to backend through POST request
+        $.ajax({
+          type: "POST",
+          url : "http://localhost:5000/",
+          cache: false,
+          dataType : "json",
+          data : {'data': selected},
+          success : function(suggestions) {
+              //alert(data);
+              //console.log(data);
+              response(suggestions);
+          },
+        });
   });
-});
-
+//});
+*/
 
   // Get word by passing the cursor on it
   /*
