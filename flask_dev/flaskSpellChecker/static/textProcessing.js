@@ -34,7 +34,7 @@ $(document).ready(function() {
 });
 */
 
-
+/*
 // Get word by cursor selection
 //$(document).ready(function() {
     $("#textArea").on('click', function(e) {
@@ -74,7 +74,7 @@ $(document).ready(function() {
           },
         });
   });
-
+*/
 
 // Send text fo backend and return misspelled word for underlining
 /*
