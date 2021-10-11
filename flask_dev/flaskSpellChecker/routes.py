@@ -43,13 +43,13 @@ def submit():
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
-        """
-        This function gets the text in the editor from the web page at https://localhost:5000/ and compute
-        backend spell checker.
+    """
+    This function gets the text in the editor from the web page at https://localhost:5000/ and compute
+    backend spell checker.
 
-        output: json of suggestions for the mispelled words
-        """
-
+    output: json of suggestions for the misspelled words
+    """
+    if request.method=='POST' :
         # Retrieve test
         term = request.form['text']
         print('text: ', term)
@@ -79,7 +79,7 @@ def computeMispelledWords():
 @app.route('/', methods=['POST'])
 def test():
     if request.method == "POST":
-     selected = request.form['text']
+     selected = request.form['data']
      print('selected', selected)
-    return render_template('english.html')
-"""
+
+    return render_template('english.html')"""
