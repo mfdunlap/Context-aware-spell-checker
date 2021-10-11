@@ -2,7 +2,7 @@
 Author: Lorenzo
 
 To include in your html code:
-<script src = "{{url_for('static', filename='textProcessing.js')}}"></script>
+<script src = "{{url_for('static', filename='underlineWords.js')}}"></script>
 
 */
 
