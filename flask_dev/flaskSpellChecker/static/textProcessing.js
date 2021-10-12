@@ -3,7 +3,6 @@ Author: Lorenzo
 
 To include in your html code:
 <script src = "{{url_for('static', filename='textProcessing.js')}}"></script>
-
 */
 
 // Get word by cursor selection

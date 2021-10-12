@@ -88,6 +88,9 @@ $(document).ready(function(){
 
 
 function GetSelectedText() {
+    /*
+    Get the text selected on the web page
+    */
 
     if (document.getSelection) {    // all browsers, except IE before version 9
         var sel = document.getSelection();

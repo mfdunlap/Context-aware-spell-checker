@@ -89,6 +89,9 @@ def computeMispelledWords():
 
 @app.route('/selected', methods=['POST'])
 def forwardSuggestions():
+    """
+    Forward suggestions to front-end for the selected misspelled word
+    """
     if request.method == "POST":
      selected = request.form["test"]
      print('selected', selected)
