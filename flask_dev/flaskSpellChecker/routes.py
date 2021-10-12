@@ -43,43 +43,66 @@ def submit():
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
-    """
-    This function gets the text in the editor from the web page at https://localhost:5000/ and compute
-    backend spell checker.
+    
+    #This function gets the text in the editor from the web page at https://localhost:5000/ and compute
+    #backend spell checker.
 
-    output: json of suggestions for the misspelled words
-    """
+    #output: json of suggestions for the misspelled words
+    
     if request.method=='POST' :
+        
         # Retrieve test
         term = request.form['text']
         print('text: ', term)
+
         # Index dictionary of misspelled words
         idxDict = dict()
+        
         # Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
         candidates, misspelled, idxDict = utils.simpleChecker(term)
+
         # Get the last mispelled word candidates
         if misspelled:
             last_mispelled = misspelled[len(misspelled)-1]
             last_candidate = candidates[str(last_mispelled)]
             last_candidate = list([c for c in last_candidate])
 
+
         # Set json url for results
-        SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        json_url = os.path.join(SITE_ROOT, "data", "results.json")
-        json_data = json.loads(open(json_url).read())
+        #SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+        #json_url = os.path.join(SITE_ROOT, "data", "results.json")
+        #json_data = json.loads(open(json_url).read())
         # Compute
-        filtered_dict = [v for v in json_data if term in v]
-        #resp = jsonify(last_candidate if misspelled else None)
+        #filtered_dict = [v for v in json_data if term in v]
+        #resp = jsonify(last_candidate if misspelled else None
+    
+        # Save misspelled words
+        with open("flask_dev/flaskSpellChecker/data/results.json", "w") as f:
+            json.dump(candidates, f, default=set_default)
+
         resp = jsonify(misspelled)
-        resp.status_code = 200
+        print(resp)
+        #resp = jsonify(misspelled)
+        #resp.status_code = 200
         return resp
 
 
-"""
-@app.route('/', methods=['POST'])
-def test():
+@app.route('/selected', methods=['POST'])
+def forwardSuggestions():
     if request.method == "POST":
-     selected = request.form['data']
+     selected = request.form["test"]
      print('selected', selected)
+     misspelledDict = dict()
+     with open("flask_dev/flaskSpellChecker/data/results.json") as f:
+        misspelledDict = json.load(f)
+    
+        if selected in misspelledDict:
+            print(misspelledDict[selected])
+            return jsonify(misspelledDict[selected])
 
-    return render_template('english.html')"""
+    return render_template("base.html")
+
+def set_default(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    raise TypeError
