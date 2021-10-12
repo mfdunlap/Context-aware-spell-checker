@@ -7,23 +7,38 @@ import os, json
 @app.route('/home')
 @app.route('/english')
 def default_page():
-    return render_template('english.html')
+    # Set language to UTF-8 code for English
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "en"
+    return render_template('english.html', language=language)
 
 @app.route('/french')
 def french_page():
-    return render_template('french.html')
+    # Set language to UTF-8 code for French
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "fr"
+    return render_template('french.html', language=language)
 
 @app.route('/german')
 def german_page():
-    return render_template('german.html')
+    # Set language to UTF-8 code for German
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "de"
+    return render_template('german.html', language=language)
 
 @app.route('/portuguese')
 def portuguese_page():
-    return render_template('portuguese.html')
+    # Set language to UTF-8 code for Portuguese
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "pt"
+    return render_template('portuguese.html', language=language)
 
 @app.route('/spanish')
 def spanish_page():
-    return render_template('spanish.html')
+    # Set language to UTF-8 code for Spanish
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "es"
+    return render_template('spanish.html', language=language)
     
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -43,6 +58,7 @@ def submit():
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
+    print(request.accept_languages)
     
     #This function gets the text in the editor from the web page at https://localhost:5000/ and compute
     #backend spell checker.
