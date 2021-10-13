@@ -93,7 +93,7 @@ def computeMispelledWords():
         #resp = jsonify(last_candidate if misspelled else None
     
         # Save misspelled words
-        with open("flask_dev/flaskSpellChecker/data/results.json", "w") as f:
+        with open("flaskSpellChecker/data/results.json", "w") as f:
             json.dump(candidates, f, default=set_default)
 
         resp = jsonify(misspelled)
@@ -109,10 +109,10 @@ def forwardSuggestions():
     Forward suggestions to front-end for the selected misspelled word
     """
     if request.method == "POST":
-     selected = request.form["test"]
+     selected = request.form['test']
      print('selected', selected)
      misspelledDict = dict()
-     with open("flask_dev/flaskSpellChecker/data/results.json") as f:
+     with open("flaskSpellChecker/data/results.json") as f:
         misspelledDict = json.load(f)
     
         if selected in misspelledDict:
