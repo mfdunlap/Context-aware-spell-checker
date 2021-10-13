@@ -16,32 +16,6 @@
 
         {%endblock%}
     </title>
-
-    <!-- Create Right Click Menu Style -->
-    <style type="text/css">
-        .context-menu {
-            position: absolute;
-            text-align: center;
-            background: rgb(25, 73, 58);
-            border: 1px solid lavender;
-        }
-
-        .context-menu ul {
-            padding: 0px;
-            margin: 0px;
-            min-width: 150px;
-            list-style: none;
-        }
-
-        .context-menu ul li a {
-            text-decoration: none;
-            color: lavender;
-        }
-
-        .context ul li:hover {
-            background: darkgray;
-        }
-    </style>
 </head>
 
 <body>
@@ -123,15 +97,7 @@
 
     <!-- Test Right Click Menu -->
     <div id="contextMenu" class="context-menu" style="display: none">
-        <ul>
-            <li data-action="Word-1"><a href="#">Word-1</a></li>
-            <li data-action="Word-2"><a href="#">Word-2</a></li>
-            <li data-action="Word-3"><a href="#">Word-3</a></li>
-            <li data-action="Word-4"><a href="#">Word-4</a></li>
-            <li data-action="Word-5"><a href="#">Word-5</a></li>
-            <li data-action="Word-6"><a href="#">Word-6</a></li>
-            <li data-action="Word-7"><a href="#">Word-7</a></li>
-        </ul>
+        <ul id="listItems"></ul>
     </div>
 
 
@@ -164,17 +130,41 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
     <script src="{{url_for('static', filename='textProcessing.js')}}"></script>
     <script src="{{url_for('static', filename='underlineWords.js')}}"></script>
-    <script src="{{url_for('static', filename='resultsDisplay.js')}}"></script>
 
 </body>
 
 
-<!-- Default Style Formats-->
-<style>
+<!-- Default Style Formats for body and context menu-->
+<style type="text/css">
     body {
         background-color: #000000;
         color: rgb(129, 199, 178)
     }
+
+    
+    .context-menu {
+        position: absolute;
+        text-align: center;
+        background: rgb(219, 224, 223);
+        border: 1px solid lavender;
+    }
+
+    .context-menu ul {
+        padding: 0px;
+        margin: 0px;
+        min-width: 150px;
+        list-style: none;
+    }
+
+    .context-menu ul li a {
+        text-decoration: none;
+        color: lavender;
+    }
+
+    .context ul li:hover {
+        background: darkgray;
+    }
 </style>
+
 
 </html>
