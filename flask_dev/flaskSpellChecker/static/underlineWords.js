@@ -35,7 +35,7 @@ $(document).ready(function(){
               tmp = text_value
               for (let i = 0; i < data.length; i++){
                 word = data.at(i)
-                tmp = tmp.replace(word, '<span style="background-color:yellow">'+word+'</span>');
+                tmp = tmp.replace(word, '<span style="text-decoration: underline 2px red;">'+word+'</span>');
                 document.getElementById("textArea").innerHTML=tmp
                 //underlinedText = text_value.replace(/(nams)/gi, '<u>$1</u>');
                 console.log(tmp)
