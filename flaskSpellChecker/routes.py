@@ -1,4 +1,6 @@
 import configparser
+
+from nltk import util
 from flaskSpellChecker import utils, app
 from flask import render_template, request, flash, jsonify
 import json
@@ -63,13 +65,7 @@ def computeMispelledWords():
     
     #This function gets the text in the editor from the web page at https://localhost:5000/ and compute
     #backend spell checker.
-
-    # Import configuration file
-    conf = ConfigParser()
-    conf.read("flaskSpellChecker/config.ini")
-    json_path = conf['DEFAULT']['json_path']
-
-    #output: json of suggestions for the misspelled words
+    #Output: json of suggestions for the misspelled words
     
     if request.method=='POST' :
         
@@ -99,6 +95,7 @@ def computeMispelledWords():
         #resp = jsonify(last_candidate if misspelled else None
     
         # Save misspelled words
+        json_path = utils.getResultsPath()
         with open(json_path, "w") as f:
             json.dump(candidates, f, default=set_default)
 
@@ -118,6 +115,9 @@ def forwardSuggestions():
      selected = request.form['test']
      print('selected', selected)
      misspelledDict = dict()
+     json_path = utils.getResultsPath()
+
+
      with open(json_path) as f:
         misspelledDict = json.load(f)
     
