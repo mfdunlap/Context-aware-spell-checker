@@ -71,7 +71,7 @@ $(document).ready(function () {
 
             // Replaced the misspelling with the selected correction
             var correction = $(this).attr("data-action");
-            document.getElementById("textArea").innerHTML = document.getElementById("textArea").innerHTML.replace(word, correction);
+            document.getElementById("textArea").innerHTML = document.getElementById("textArea").innerHTML.replace('<span style="text-decoration: underline 2px red;">'+word+'</span>', correction);
 
 
             // Hide the menu after the action was triggered
