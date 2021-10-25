@@ -12,36 +12,45 @@ from configparser import ConfigParser
 def default_page():
     # Set language to UTF-8 code for English
     # Can be tested by looking at viewing source code on page (Ctrl+U)
-    language = "en"
-    return render_template('english.html', language=language)
+    spellCheckLanguage = "en"
+    webTextLanguage = "en"
+    return render_template('english.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
+
 
 @app.route('/french')
 def french_page():
-    # Set language to UTF-8 code for French
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    language = "fr"
-    return render_template('french.html', language=language)
+    # Set spell checker language to UTF-8 code for French
+    # Set page's text language to english on default
+    spellCheckLanguage = "fr"
+    webTextLanguage = "en"
+    return render_template('french.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
+
 
 @app.route('/german')
 def german_page():
-    # Set language to UTF-8 code for German
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    language = "de"
-    return render_template('german.html', language=language)
+    # Set spell checker language to UTF-8 code for French
+    # Set page's text language to english on default
+    spellCheckLanguage = "de"
+    webTextLanguage = "en"
+    return render_template('german.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
+
 
 @app.route('/portuguese')
 def portuguese_page():
-    # Set language to UTF-8 code for Portuguese
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    language = "pt"
-    return render_template('portuguese.html', language=language)
+    # Set spell checker language to UTF-8 code for French
+    # Set page's text language to english on default
+    spellCheckLanguage = "pt"
+    webTextLanguage = "en"
+    return render_template('portuguese.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
+
 
 @app.route('/spanish')
 def spanish_page():
-    # Set language to UTF-8 code for Spanish
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    language = "es"
-    return render_template('spanish.html', language=language)
+    # Set spell checker language to UTF-8 code for French
+    # Set page's text language to english on default
+    spellCheckLanguage = "es"
+    webTextLanguage = "en"
+    return render_template('spanish.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
     
 @app.route('/submit', methods=['POST'])
 def submit():
