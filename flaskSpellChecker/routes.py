@@ -43,21 +43,6 @@ def spanish_page():
     language = "es"
     return render_template('spanish.html', language=language)
     
-@app.route('/submit', methods=['POST'])
-def submit():
-    results = {}
-    errors = []
-    if request.method=='POST':
-        try:
-            text = request.form['message']
-            print(text)
-            utils.simpleChecker(text)
-            flash(f'Text submitted to backend.', category='danger')
-        except:
-            errors.append("Unable to get text.")
-            flash(f'Text was not submitted', category='danger')
-    return render_template('english.html', errors=errors, results=results)
-
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
