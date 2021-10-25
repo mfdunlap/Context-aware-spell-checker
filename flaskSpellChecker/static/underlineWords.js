@@ -31,14 +31,14 @@ $(document).ready(function(){
             },
             // Return mispelled words -> underlining misspelled words
             success : function(data) {
+              console.log(text_value)
               console.log(data)
               tmp = text_value
               for (let i = 0; i < data.length; i++){
                 word = data.at(i)
                 tmp = tmp.replace(word, '<span style="text-decoration: underline 2px red;">'+word+'</span>');
                 document.getElementById("textArea").innerHTML=tmp
-                //underlinedText = text_value.replace(/(nams)/gi, '<u>$1</u>');
-                console.log(tmp)
+                //console.log(tmp)
                }
               
               //$("textArea").css('text-decoration','underline')

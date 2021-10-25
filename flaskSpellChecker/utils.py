@@ -1,3 +1,4 @@
+import configparser
 from spellchecker import SpellChecker
 from textblob import TextBlob
 import re
@@ -32,5 +33,8 @@ def simpleChecker(text):
     #print(candidates)
     return candidates, misspelled, idxDict
         
-
+def getResultsPath():
+    configFile = configparser.ConfigParser()
+    configFile.read("flaskSpellChecker/config.ini")
+    return configFile['DEFAULT']['json_path']
      
