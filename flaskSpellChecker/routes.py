@@ -29,6 +29,13 @@ def german_page():
     language = "de"
     return render_template('german.html', language=language)
 
+@app.route('/irish')
+def irish_page():
+    # Set language to UTF-8 code for Irish
+    # Can be tested by looking at viewing source code on page (Ctrl+U)
+    language = "ga"
+    return render_template('irish.html', language=language)
+
 @app.route('/portuguese')
 def portuguese_page():
     # Set language to UTF-8 code for Portuguese
