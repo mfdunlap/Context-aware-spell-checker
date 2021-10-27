@@ -9,17 +9,19 @@ To include in your html code:
 // Underline misspelled words
 $(document).ready(function(){
     
-    document.getElementById("textArea").onkeyup = function(){
+    document.getElementById("textArea").onkeyup = function(e){
       //var text_value = document.getElementById("textArea");
+
       text_value = $("#textArea").text();
   
       text_html= document.getElementById("textArea");
       text_html = text_html.innerHTML
   
-      console.log(text_value.at(-1))
-      
-      if(text_html.at(-1) === ';') {
-        console.log("space detected");
+      //console.log(text_value.at(-1))
+
+      if(e.key == " " || (e.key == "Backspace" )) {
+        //console.log("DETECTED")
+        
         // Ajax post request -> send text to backend
           $.ajax({
             type: "POST",
@@ -31,6 +33,7 @@ $(document).ready(function(){
             },
             // Return mispelled words -> underlining misspelled words
             success : function(data) {
+<<<<<<< Updated upstream:flask_dev/flaskSpellChecker/static/underlineWords.js
               console.log(data)
               tmp = text_value
               for (let i = 0; i < data.length; i++){
@@ -41,6 +44,24 @@ $(document).ready(function(){
                 console.log(tmp)
                }
               
+=======
+              //console.log("text: ", text_value)
+              //console.log("misspelled: ", data)
+              //console.log(text_html)
+              // CASE: if there's 1 misspelled and it is canceled, then replace the HTML with the actual text
+              if (data.length ==0)
+                document.getElementById("textArea").innerHTML=text_value
+              else{
+                tmp = text_value
+                for (let i = 0; i < data.length; i++){
+                  word = data.at(i)
+                  //console.log("word ", word)
+                  tmp = tmp.replace(word, '<span style="text-decoration: underline 2px red;">'+word+'</span>');
+                  document.getElementById("textArea").innerHTML=tmp
+                  //console.log(tmp)
+                }
+              }
+>>>>>>> Stashed changes:flaskSpellChecker/static/underlineWords.js
               //$("textArea").css('text-decoration','underline')
   
               // Set cursor at the end of text area
