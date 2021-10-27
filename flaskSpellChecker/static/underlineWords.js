@@ -33,6 +33,7 @@ $(document).ready(function(){
             },
             // Return mispelled words -> underlining misspelled words
             success : function(data) {
+<<<<<<< HEAD:flask_dev/flaskSpellChecker/static/underlineWords.js
               //console.log("text: ", text_value)
               //console.log("misspelled: ", data)
               //console.log(text_html)
@@ -49,6 +50,18 @@ $(document).ready(function(){
                   //console.log(tmp)
                 }
               }
+=======
+              console.log(text_value)
+              console.log(data)
+              tmp = text_value
+              for (let i = 0; i < data.length; i++){
+                word = data.at(i)
+                tmp = tmp.replace(word, '<span style="text-decoration: underline 2px red;">'+word+'</span>');
+                document.getElementById("textArea").innerHTML=tmp
+                //console.log(tmp)
+               }
+              
+>>>>>>> b83e5839c03a2cc1af8f71fee9064ba652ed1ba7:flaskSpellChecker/static/underlineWords.js
               //$("textArea").css('text-decoration','underline')
   
               // Set cursor at the end of text area

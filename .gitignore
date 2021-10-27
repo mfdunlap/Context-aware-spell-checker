@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # Result json file
+flask_dev/flaskSpellChecker/data/results.json
 flaskSpellChecker/data/results.json
