@@ -127,9 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< Updated upstream
-=======
 
 # Result json file
 flaskSpellChecker/data/results.json
->>>>>>> Stashed changes
