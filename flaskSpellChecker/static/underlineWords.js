@@ -9,17 +9,19 @@ To include in your html code:
 // Underline misspelled words
 $(document).ready(function(){
     
-    document.getElementById("textArea").onkeyup = function(){
+    document.getElementById("textArea").onkeyup = function(e){
       //var text_value = document.getElementById("textArea");
+
       text_value = $("#textArea").text();
   
       text_html= document.getElementById("textArea");
       text_html = text_html.innerHTML
   
-      console.log(text_value.at(-1))
-      
-      if(text_html.at(-1) === ';') {
-        console.log("space detected");
+      //console.log(text_value.at(-1))
+
+      if(e.key == " " || (e.key == "Backspace" )) {
+        //console.log("DETECTED")
+        
         // Ajax post request -> send text to backend
           $.ajax({
             type: "POST",
