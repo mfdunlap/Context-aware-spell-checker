@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="{{language}}">
+<html lang="{{websiteTextLanguage}}">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
 
     <!-- Create Variable Title -->
     <title>
@@ -26,10 +28,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <!-- Create Navigation Bar Items -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{url_for('default_page')}}">English</a>
                 </li>
                 <li class="nav-item">
@@ -51,20 +54,14 @@
         </div>
     </nav>
 
-    <!-- Set up Flash Messages Display -->
-    {%with messages = get_flashed_messages(with_categories=true)%}
-    {%if messages%}
-    {%for category, message in messages%}
-    <div class="alert alert-{{category}}">
-        <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        {{message}}
-    </div>
-    {%endfor%}
-    {%endif%}
-    {%endwith%}
 
+    <!-- Set up Context Menu -->
+    <div id="contextMenu" class="context-menu" style="display: none">
+        <ul id="listItems"></ul>
+    </div>
+
+
+    <!-- Set up Page Title -->
     <body class="text-center">
         <br>
 
@@ -72,49 +69,31 @@
             {%block pageTitle%}
 
             {%endblock%}
-
         </h2>
 
         <br>
-        <!--<form action="{{ url_for('submit') }}" method="post">-->
-        <div contenteditable="true" id="textArea"
-            style="margin:auto; padding:5px; width:80%; height: 450px; text-align:left; background-color: #212121; color: white;">
+
+        <div style="text-align:left; margin:auto; width:80%; height: 450px;">
+            <h5>
+                {%block instructionsTitle%}
+                
+                {%endblock%}
+            </h5>
+            <p style="margin-left: 2%;">
+                {%block instructionsText%}
+                
+                {%endblock%}
+            </p>
+    
+            <div contenteditable="true" id="textArea"
+                style="margin:auto; padding:5px; width:100%; height:100%; text-align:left; background-color: #212121; color: white;">
+            </div>
         </div>
-
-        <!--<br>
-    <input type="submit" value="{%block submitTextBtn%}{%endblock%}">
-
-    <br>
-
-    </form>
-
-    <br>
-
-    <form action="{{ url_for('submit') }}" method="post">
-        <label for="myfile">Select a file:</label>
-        <input type="file" id="myfile" name="myfile">
-    </form>-->
-
+        
     </body>
 
 
-    <!-- Test Right Click Menu -->
-    <div id="contextMenu" class="context-menu" style="display: none">
-        <ul id="listItems"></ul>
-    </div>
-
-
-    <!-- Create Variable Space for Future Content -->
-    {%block content%}
-
-
-    {%endblock%}
-
-
-    <!-- Optional JavaScript -->
-
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- JavaScript Scripts -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -168,6 +147,4 @@
         background: darkgray;
     }
 </style>
-
-
 </html>
