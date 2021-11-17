@@ -1,8 +1,7 @@
 import configparser
 from spellchecker import SpellChecker
-from textblob import TextBlob
+import string
 import re
-from flaskSpellChecker import dictionary
 from dictionary import Dictionary
 
 def simpleChecker(text):
@@ -40,146 +39,170 @@ def getResultsPath():
     configFile.read("flaskSpellChecker/config.ini")
     return configFile['DEFAULT']['json_path']
 
-def checkSpelling(text, dictionary):
+
+def spellCheckText(dictionary, text):
     misspellings = dict()
     wordIndex = dict()
-    emptySlot = "WordDoesntExist"
+    wordlist = text.split()
+    numWords = len(wordlist)
 
-    gaDict = dictionary.getWordFreqList()
-    
-    p = re.compile(r"(\b[-']\b)|[\W_]")
-    wordOnlyText = p.sub(lambda m: (m.group(1) if m.group(1) else " "), text)
-    wordlist = wordOnlyText.split()
-
-    for i, word in enumerate(wordlist):
-        wordContext = ["WordDoesntExist", word, "WordDoesntExist"]
-
-        if 0 <= i-1 < len(wordlist):
-            wordContext[0] = wordlist[i-1]
-
-        if 0 <= i+1 < len(wordlist):
-            wordContext[2] = wordlist[i+1]
-
-        wordContextString = " ".join(wordContext)
-
-        if not (wordContext[1] in gaDict or wordContext[1].lower() in gaDict):
-            
-            if not wordContextString in misspellings:
-                misspellings[wordContextString] = dict()
-
-                for j in range(len(wordContext)):
-                    if wordContext[j] == emptySlot:
-                        wordContext[j] = ""
-                wordContextString = (" ".join(wordContext)).strip()
-                wordIndex[wordContextString] = list()
-            
-            wordIndex[wordContextString].append(i)
-
-    corrections = getCorrections(misspellings, dictionary)
-
-    return corrections, wordIndex
-
-
-def getCorrections(misspellingsDict, dictionary):
-    alphabet = 'abcdefghilmnoprstuáéíóú-'
-    dictionaryWords = dictionary.getWordFreqList()
-
-
-    for key in misspellingsDict.keys():
-        splitContext = key.split()
-        misspell = splitContext[1]
-
-        splitMisspell = [(misspell[:i], misspell[i:]) for i in range(len(misspell) + 1)]
-        deletes = [a + b[1:] for a, b in splitMisspell if b]
-        transposes = [a + b[1] + b[0] + b[2:] for a, b in splitMisspell if len(b)>1]
-        replaces = [a + c + b[1:] for a, b in splitMisspell for c in alphabet if b]
-        inserts = [a + c + b for a, b in splitMisspell for c in alphabet]
+    for i in range(numWords):
         
-        suggestions = list(set(deletes + transposes + replaces + inserts))
-        misspellingsDict[key] = [suggestion for suggestion in suggestions if suggestion in dictionaryWords]
+        word = wordlist[i]
+        prevWord = ""
+        nextWord = ""
 
-        for a,b in splitMisspell:
-            if a in dictionaryWords and b in dictionaryWords:
-                misspellingsDict[key].append(a + " " + b)
+        if 0 <= i-1 < numWords:
+            prevWord = wordlist[i-1]
 
-    rankedMisspellingsDict = rankGaCorrections(misspellingsDict, dictionary)
-    return rankedMisspellingsDict
+        if 0 <= i+1 < numWords:
+            nextWord = wordlist[i+1]
+
+        contextedWord = (" ".join([prevWord, word, nextWord])).strip()
+
+        if not contextedWord in misspellings:
+            corrections = spellCheckWord(dictionary, word, prevWord, nextWord)
+
+            if corrections:
+                misspellings[contextedWord] = corrections
+                wordIndex[contextedWord] = [i]
+        else:
+            wordIndex[contextedWord].append(i)
+    
+    return misspellings, wordIndex
 
 
-def rankGaCorrections(correctionsDict, dictionary):
+def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
+    """
+        This function return a ranked lists of potentional corrections for a word with or without context.
+        
+        Arguments:
+            - dictionary: a frequency dictionary of words to check the spelling of word
+            - word: the word to be spell checked
+            - prevWord: the word before word (optional)
+            - nextWord: the word after word (optional)
+            
+        Returns:
+            - correctionsList: a ranked list of possible corrections for word if word is misspelled
+            - correctionsList: a list containing the only the value -1 for misspelled words with no found corrections
+            - correctionsList: an empty list if word is correctly spelled    
+    """
+
+    correctionsList = list()
+    freqDict = dictionary.getWordFreq()
+    lenWord = len(word)
+
+    # Determine appropriate edit distance from length of the word
+    if lenWord < 5:
+        editDist = 1
+    else:
+        editDist = 2
+
+    # Check if word is numerical outside of punctuation:
+    wordWithoutPunct = re.sub(r'[^\w\s]','', word)
+    wordIsNumBased = wordWithoutPunct.isdigit()
+
+    # Check if word is only punctuation:
+    punct = string.punctuation
+    wordIsPunct = all(c in punct for c in word)
+
+    # Check if word is correctly spelled:
+    word = word.strip(punct)
+    wordIsValid = word in freqDict or word.lower() in freqDict
+
+    # Return empty list if valid term:
+    if wordIsNumBased or wordIsPunct or wordIsValid:
+        return correctionsList
+
+    correctionsList = getCorrections(dictionary, word, prevWord, nextWord, editDist)
+
+    return correctionsList
+
+
+def getCorrections(dictionary, word, prevWord="", nextWord="", editDist=1):
+    alphabet = 'abcdefghilmnoprstuáéíóú-'
+    freqDict = dictionary.getWordFreq()
+    noPossibleCorrections = [-1]
+
+    # Get potential corrections:
+    splitMisspell = [(word[:i], word[i:]) for i in range(len(word) + 1)]
+    deletes = [a + b[1:] for a, b in splitMisspell if b]
+    transposes = [a + b[1] + b[0] + b[2:] for a, b in splitMisspell if len(b)>1]
+    replaces = [a + c + b[1:] for a, b in splitMisspell for c in alphabet if b]
+    inserts = [a + c + b for a, b in splitMisspell for c in alphabet]
+    splits = [(" ".join([a,b])).strip() for a,b in splitMisspell]
+
+    suggestions = list(set(deletes + transposes + replaces + inserts + splits))
+
+    if editDist > 1:
+        newSuggestions = list()
+        for item in suggestions:
+            recursiveSuggest = getCorrections(dictionary, item, prevWord, nextWord, editDist=editDist-1)
+            if recursiveSuggest != noPossibleCorrections:
+                newSuggestions.extend(recursiveSuggest)
+
+        suggestions.extend(newSuggestions)
+        suggestions = list(set(suggestions))
+
+    possibleCorrections = [suggestion for suggestion in suggestions if suggestion in freqDict]
+
+    if not possibleCorrections:
+        return noPossibleCorrections       
+
+    rankedMisspellings = rankCorrections(dictionary, possibleCorrections, prevWord, nextWord)
+    return rankedMisspellings
+
+
+def rankCorrections(dictionary, possibilities, prevWord="", nextWord=""):
     rankedCorrectionsDict = dict()
 
-    wordDict = dictionary.getWordFreqList()
-    nextWordDict = dictionary.getNextWordFreqList()
-    prevWordDict = dictionary.getPrevWordFreqList()
+    wordDict = dictionary.getWordFreq()
+    prevWordDict = dictionary.getPrevWordFreq()
+    nextWordDict = dictionary.getNextWordFreq()
 
     totalWords = sum(wordDict.values())
 
-    for key, value in correctionsDict.items():
-        correctionranking = dict()
-        emptySlot = "WordDoesntExist"
-        splitContext = key.split()
+    for suggestion in possibilities:
+        firstSuggest = suggestion
+        secondSuggest = suggestion
 
-        if splitContext[0] != emptySlot:
-            prevWord = splitContext[0]
+        if ' ' in suggestion:
+            splitSuggestion = suggestion.split()
+            firstSuggest = splitSuggestion[0]
+            secondSuggest = splitSuggestion[1]
+
+        # Calculate probability that word is used:
+        if firstSuggest == secondSuggest:
+            probWord = wordDict[suggestion] / totalWords
         else:
-            prevWord = ""
-
-        misspell = splitContext[1]
-
-        if splitContext[2] != emptySlot:
-            nextWord = splitContext[2]
-        else:
-            nextWord = ""
-
-        for suggestion in value:
-
-            if not (' ' in suggestion):
-                probWord = wordDict[suggestion] / totalWords
-
-                if nextWord in nextWordDict[suggestion]:
-                    totalNextWords = sum(nextWordDict[suggestion].values())
-                    probNextWord = nextWordDict[suggestion][nextWord] / totalNextWords
-                else:
-                    probNextWord = 0
-            
-                if prevWord in prevWordDict[suggestion]:
-                    totalPrevWords = sum(prevWordDict[suggestion].values())
-                    probPrevWord = prevWordDict[suggestion][prevWord] / totalPrevWords
-                else:
-                    probPrevWord = 0
-
+            if secondSuggest in nextWordDict[firstSuggest]:
+                totalCombo = sum(nextWordDict[firstSuggest].values())
+                probWord = nextWordDict[firstSuggest][secondSuggest] / totalCombo
             else:
-                suggestWords = suggestion.split()
-                suggest1 = suggestWords[0]
-                suggest2 = suggestWords[1]
-                
-                if suggest2 in nextWordDict[suggest1]:
-                    totalNextWords = sum(nextWordDict[suggest1].values())
-                    probWord = nextWordDict[suggest1][suggest2] / totalNextWords
-                else:
-                    probWord = 0
+                probWord = 0
 
-                if nextWord in nextWordDict[suggest2]:
-                    totalNextWords = sum(nextWordDict[suggest2].values())
-                    probNextWord = nextWordDict[suggest2][nextWord] / totalNextWords
-                else:
-                    probNextWord = 0
+        # Calculate probability that prevWord is the word before the suggestion:
+        if prevWord and prevWord in prevWordDict[firstSuggest]:
+            totalPrevWords = sum(prevWordDict[firstSuggest].values())
+            probPrevWord = prevWordDict[firstSuggest][prevWord] / totalPrevWords
+        else:
+            probPrevWord = 0
 
-                if prevWord in prevWordDict[suggest1]:
-                    totalPrevWords = sum(prevWordDict[suggest1].values())
-                    probPrevWord = prevWordDict[suggest1][prevWord] / totalPrevWords
-                else:
-                    probPrevWord = 0
-            
-            probability = 0.6*probWord + 0.2*probPrevWord + 0.2*probNextWord
-            correctionranking[suggestion] = probability
-        print(correctionranking)
-        rankedCorrections = sorted(correctionranking, key=correctionranking.get, reverse=True)
-        misspellContext = (" ".join([prevWord, misspell, nextWord])).strip()
-        rankedCorrectionsDict[misspellContext] = rankedCorrections
+        # Calculate probability that nextWord is the word after the suggestion
+        if nextWord and nextWord in nextWordDict[secondSuggest]:
+            totalNextWords = sum(nextWordDict[secondSuggest].values())
+            probNextWord = nextWordDict[secondSuggest][nextWord] / totalNextWords
+        else:
+            probNextWord = 0
 
-    return rankedCorrectionsDict
+        # Calculate weighted estimate that suggestion is the correct replacement
+        weightedEst = 0.6*probWord + 0.2*probPrevWord + 0.2*probNextWord
+        rankedCorrectionsDict[suggestion] = weightedEst
+
+    # Rank suggestion by weighted estimate
+    rankedCorrections = sorted(rankedCorrectionsDict, key=rankedCorrectionsDict.get, reverse=True)
+
+    return rankedCorrections
 
 
 if __name__ == "__main__":
@@ -190,7 +213,21 @@ if __name__ == "__main__":
     #    print("Next Words:", nextDict["an"])
 
     #text = "Sin, sin. SIn: SIN? xin, xin. XIn; XIN!"
-    text = "a xin an. Iúdá ajus! ró luath ag"
-    misspellings, index = checkSpelling(text, ga)
+
+    text = "a xin an. Iúdá ajus! ró luath ag. ró l-uat-h ag"
+
+    misspellings = spellCheckWord(ga, "xin")
+    print("Xin Corrections:", misspellings)
+
+    misspellings = spellCheckWord(ga, "xin", "a", "an")
+    print("Xin Corrections:", misspellings)
+
+    misspellings = spellCheckWord(ga, "xin", prevWord="a")
+    print("Xin Corrections:", misspellings)
+
+    misspellings = spellCheckWord(ga, "xin", nextWord="an")
+    print("Xin Corrections:", misspellings)
+
+    misspellings, index = spellCheckText(ga, text)
     print("Mispellings:", misspellings)
     print("Indices:", index)

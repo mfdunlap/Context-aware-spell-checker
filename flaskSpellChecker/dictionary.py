@@ -58,11 +58,11 @@ class Dictionary:
 
         return freqDict
 
-    def getWordFreqList(self):
+    def getWordFreq(self):
         return self._wordFreqList
 
-    def getNextWordFreqList(self):
+    def getNextWordFreq(self):
         return self._nextFreqList
 
-    def getPrevWordFreqList(self):
+    def getPrevWordFreq(self):
         return self._prevFreqList
