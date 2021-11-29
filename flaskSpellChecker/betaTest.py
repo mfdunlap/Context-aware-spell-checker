@@ -42,11 +42,6 @@ if __name__ == "__main__":
             answerList.append(answer)
             counter += 1
             
-            # For testset
-            #if(i%1000 == 0):
-            #    print(str(int(i/600)) + "% Complete")
-
-            # For input-test
             if(i%6000 == 0):
                 print(str(int(i/600)) + "% Complete")
 
@@ -84,3 +79,4 @@ if __name__ == "__main__":
 
     #totalCorrections = len(ourAnswerKey)    
     #print("Percent Correct:", 100 * correctAnswers / totalCorrections)
+    
