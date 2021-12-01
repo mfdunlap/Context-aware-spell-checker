@@ -13,9 +13,9 @@ class Dictionary:
         print("Creating dictionary...")
         csv.field_size_limit(sys.maxsize)
 
-        wordFreqFile = "freqListData/" + language + "/" + language + "FreqList.csv"
-        prevWordFreqFile = "freqListData/" + language + "/" + language + "PrevFreqList.csv"
-        nextWordFreqFile = "freqListData/" + language + "/" + language + "NextFreqList.csv"
+        wordFreqFile = "flaskSpellChecker/freqListData/" + language + "/" + language + "FreqList.csv"
+        prevWordFreqFile = "flaskSpellChecker/freqListData/" + language + "/" + language + "PrevFreqList.csv"
+        nextWordFreqFile = "flaskSpellChecker/freqListData/" + language + "/" + language + "NextFreqList.csv"
         
         wordDict = self.__makeFrequencyDict(wordFreqFile, numEntries)
         prevWordDict = self.__makeSurroundingWordsDict(prevWordFreqFile, numEntries)
