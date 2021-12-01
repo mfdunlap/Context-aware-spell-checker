@@ -1,10 +1,12 @@
 import configparser
 
 from nltk import util
-from flaskSpellChecker import utils, app
+from flaskSpellChecker import utils, app, _dictionary
 from flask import render_template, request, flash, jsonify
 import json
 from configparser import ConfigParser
+from flaskSpellChecker import utils
+import os
 
 @app.route('/')
 @app.route('/home')
@@ -62,39 +64,50 @@ def computeMispelledWords():
     if request.method=='POST' :
         
         # Retrieve test
-        term = request.form['text']
-        print('text: ', term)
+        text = request.form['text']
+        print('text: ', text)
 
         # Index dictionary of misspelled words
-        idxDict = dict()
+        wordIndex = dict()
+        #en = _dictionary.Dictionary('en')
         
-        # Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
-        candidates, misspelled, idxDict = utils.simpleChecker(term)
+        # OLD-- Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
+        #candidates, misspelled, idxDict = utils.simpleChecker(term)
+
+        #  Get misspelled words with word indexes with context aware utility function
+        misspellings, wordIndex = utils.spellCheckText(utils.en, text)
+
+
+        print("[DEBUG] misspelled words: ", misspellings.keys)
+        print("[DEBUG] word indexes: ", wordIndex)
+
+        print("[DEBUG] candidates: ", misspellings)
+
 
         # Get the last mispelled word candidates
-        if misspelled:
-            last_mispelled = misspelled[len(misspelled)-1]
-            last_candidate = candidates[str(last_mispelled)]
-            last_candidate = list([c for c in last_candidate])
+        #if misspellings:
+        #    last_mispelled = misspelled[len(misspelled)-1]
+        #    last_candidate = candidates[str(last_mispelled)]
+        #    last_candidate = list([c for c in last_candidate])
 
 
         # Set json url for results
-        #SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        #json_url = os.path.join(SITE_ROOT, "data", "results.json")
-        #json_data = json.loads(open(json_url).read())
+        SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+        json_url = os.path.join(SITE_ROOT, "data", "results.json")
+        json_data = json.loads(open(json_url).read())
         # Compute
-        #filtered_dict = [v for v in json_data if term in v]
-        #resp = jsonify(last_candidate if misspelled else None
+        filtered_dict = [v for v in json_data if text in v]
+        resp = jsonify(list(misspellings.keys()) if misspellings else None)
     
         # Save misspelled words
+        
         json_path = utils.getResultsPath()
         with open(json_path, "w") as f:
-            json.dump(candidates, f, default=set_default)
+            json.dump(misspellings, f, default=set_default)
 
-        resp = jsonify(misspelled)
+        #resp = jsonify(misspellings.keys)
         print(resp)
-        #resp = jsonify(misspelled)
-        #resp.status_code = 200
+        resp.status_code = 200
         return resp
 
 
