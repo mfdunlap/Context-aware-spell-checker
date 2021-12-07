@@ -1,61 +1,19 @@
-import configparser
-
-from nltk import util
-from flaskSpellChecker import utils, app
-from flask import render_template, request, flash, jsonify
-import json
 from configparser import ConfigParser
+from flask import render_template, request, jsonify
+from flaskSpellChecker import utils, app, babel
+import json
+from nltk import util
+
+@babel.localeselector
+def get_locale():
+    return 'ga'
+    #return request.accept_languages.best_match(['de', 'en', 'es', 'fr', 'ga', 'pt'])
 
 @app.route('/')
 @app.route('/home')
-@app.route('/english')
 def default_page():
-    # Set language to UTF-8 code for English
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
     spellCheckLang = "en"
-    webTextLang = "en"
-    return render_template('english.html', spellCheckLang=spellCheckLang, webTextLang=webTextLang)
-
-@app.route('/french')
-def french_page():
-    # Set language to UTF-8 code for French
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    spellCheckLanguage = "en"
-    webTextLanguage = "fr"
-    return render_template('french.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
-
-@app.route('/german')
-def german_page():
-    # Set language to UTF-8 code for German
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    spellCheckLanguage = "en"
-    webTextLanguage = "de"
-    return render_template('german.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
-
-@app.route('/irish')
-def irish_page():
-    # Set language to UTF-8 code for Irish
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    spellCheckLanguage = "en"
-    webTextLanguage = "ga"
-    return render_template('irish.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
-
-@app.route('/portuguese')
-def portuguese_page():
-    # Set language to UTF-8 code for Portuguese
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    spellCheckLanguage = "en"
-    webTextLanguage = "pt"
-    return render_template('portuguese.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
-
-@app.route('/spanish')
-def spanish_page():
-    # Set language to UTF-8 code for Spanish
-    # Can be tested by looking at viewing source code on page (Ctrl+U)
-    spellCheckLanguage = "en"
-    webTextLanguage = "es"
-    return render_template('spanish.html', spellCheckLanguage=spellCheckLanguage, webTextLanguage=webTextLanguage)
-    
+    return render_template('base.html', spellCheckLang=spellCheckLang)
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():

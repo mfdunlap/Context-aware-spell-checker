@@ -1,0 +1,83 @@
+# Irish translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-12-07 11:46-0600\n"
+"PO-Revision-Date: 2021-12-05 17:19-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ga\n"
+"Language-Team: ga <LL@li.org>\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 "
+": n>=7 && n<=10 ? 3 : 4)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: flaskSpellChecker/templates/base.html:17
+msgid "Spell Checker"
+msgstr "Seiceálaí Litrithe"
+
+#: flaskSpellChecker/templates/base.html:24
+#: flaskSpellChecker/templates/base.html:80
+msgid "Context Aware Spell Checker"
+msgstr "Seiceálaí Litrithe Feasach ar Chomhthéacs"
+
+#: flaskSpellChecker/templates/base.html:33
+msgid "Webpage Text Language"
+msgstr "Leathanach Gréasáin Teanga Téacs"
+
+#: flaskSpellChecker/templates/base.html:38
+#: flaskSpellChecker/templates/base.html:41
+#: flaskSpellChecker/templates/base.html:56
+#: flaskSpellChecker/templates/base.html:58
+msgid "English"
+msgstr "Béarla"
+
+#: flaskSpellChecker/templates/base.html:40
+msgid "German"
+msgstr "Gearmáinis"
+
+#: flaskSpellChecker/templates/base.html:42
+msgid "Spanish"
+msgstr "Spainnis"
+
+#: flaskSpellChecker/templates/base.html:43
+msgid "French"
+msgstr "Fraincis"
+
+#: flaskSpellChecker/templates/base.html:44
+#: flaskSpellChecker/templates/base.html:59
+msgid "Irish"
+msgstr "Gaeilge"
+
+#: flaskSpellChecker/templates/base.html:45
+msgid "Portuguese"
+msgstr "Portaingéilis"
+
+#: flaskSpellChecker/templates/base.html:51
+msgid "Spell Checker Language"
+msgstr "Teanga Seiceálaí Litrithe"
+
+#: flaskSpellChecker/templates/base.html:87
+msgid "Instructions"
+msgstr "Treoracha"
+
+#: flaskSpellChecker/templates/base.html:90
+msgid "Insert text for spell correction in the box below."
+msgstr "Cuir téacs isteach le haghaidh ceartú litrithe sa bhosca thíos."
+
+#: flaskSpellChecker/templates/base.html:92
+msgid ""
+"To get recommendations for misspelled words, either double-click or "
+"right-click the word."
+msgstr "Chun moltaí a fháil maidir le focail mílitrithe, cliceáil faoi dhó nó cliceáil ar dheis ar an bhfocal."
+
+#: flaskSpellChecker/templates/base.html:99
+msgid "Word Count"
+msgstr "Líon Focal"
