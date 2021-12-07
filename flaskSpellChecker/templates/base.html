@@ -37,12 +37,12 @@
                     <div class="dropdown">
                         <button id="webTextLang" class="dropbtn">{{ _('English') }}</button>
                         <ul id="webTextOptions" class="dropdown-content">
-                            <li webTextLang="de">{{ _('German') }}</p>
-                            <li webTextLang="en">{{ _('English') }}</p>
-                            <li webTextLang="es">{{ _('Spanish') }}</p>
-                            <li webTextLang="fr">{{ _('French') }}</p>
-                            <li webTextLang="ga">{{ _('Irish') }}</p>
-                            <li webTextLang="pt">{{ _('Portuguese') }}</p>
+                            <li id="deText" onclick="setWebTextLang('de', 'deText')">{{ _('German') }}</p>
+                            <li id="enText" onclick="setWebTextLang('en', 'enText')">{{ _('English') }}</p>
+                            <li id="esText" onclick="setWebTextLang('es', 'esText')">{{ _('Spanish') }}</p>
+                            <li id="frText" onclick="setWebTextLang('fr', 'frText')">{{ _('French') }}</p>
+                            <li id="gaText" onclick="setWebTextLang('ga', 'gaText')">{{ _('Irish') }}</p>
+                            <li id="ptText" onclick="setWebTextLang('pt', 'ptText')">{{ _('Portuguese') }}</p>
                         </ul>
                     </div>
                 </li>
@@ -119,6 +119,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='setTextLang.js')}}"></script>
     <script src="{{url_for('static', filename='textProcessing.js')}}"></script>
     <script src="{{url_for('static', filename='underlineWords.js')}}"></script>
 

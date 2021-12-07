@@ -1,13 +1,15 @@
 from configparser import ConfigParser
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, session
 from flaskSpellChecker import utils, app, babel
 import json
 from nltk import util
 
 @babel.localeselector
 def get_locale():
-    return 'ga'
-    #return request.accept_languages.best_match(['de', 'en', 'es', 'fr', 'ga', 'pt'])
+    try:
+        return session['webTextLang']
+    except:
+        return request.accept_languages.best_match(['de', 'en', 'es', 'fr', 'ga', 'pt'])
 
 @app.route('/')
 @app.route('/home')
@@ -83,6 +85,14 @@ def forwardSuggestions():
             
     return render_template("base.html")
 
+@app.route('/set_webtext_language', methods=['GET','POST'])
+def set_lang():
+    if request.method == "POST":
+        webTextLang = request.form['langCode']
+        session['webTextLang'] = webTextLang
+        return jsonify({'Confirmation': 'SUCCESS'})
+    return jsonify({'Confirmation': 'FAIL'})
+        
 
 def set_default(obj):
     if isinstance(obj, set):
