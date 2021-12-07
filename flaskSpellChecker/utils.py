@@ -2,7 +2,7 @@ import configparser
 from spellchecker import SpellChecker
 import string
 import re
-from dictionary import Dictionary
+from flaskSpellChecker.dictionary import Dictionary
 
 def simpleChecker(text):
     
@@ -206,6 +206,7 @@ def rankCorrections(dictionary, possibilities, prevWord="", nextWord=""):
 
 
 if __name__ == "__main__":
+    text = ""
     ga = Dictionary('ga')
 
     #    irishDict, prevDict, nextDict = generateIrishDictionary()
@@ -214,20 +215,27 @@ if __name__ == "__main__":
 
     #text = "Sin, sin. SIn: SIN? xin, xin. XIn; XIN!"
 
-    text = "a xin an. Iúdá ajus! ró luath ag. ró l-uat-h ag"
+    #text = "a xin an. Iúdá ajus! ró luath ag. ró l-uat-h ag"
 
-    misspellings = spellCheckWord(ga, "xin")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", "a", "an")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", "a", "an")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", prevWord="a")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", prevWord="a")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", nextWord="an")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", nextWord="an")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings, index = spellCheckText(ga, text)
-    print("Mispellings:", misspellings)
-    print("Indices:", index)
+    #misspellings, index = spellCheckText(ga, text)
+    #print("Mispellings:", misspellings)
+    #print("Indices:", index)
+
+    while (text != "exit"):
+        text = str(input("Enter text to spell check (Irish): "))
+        misppellings, indicies = spellCheckText(ga, text)
+        print("Misspellings:", misppellings)
+        print("Indices of Mispellings:", indicies)
+        print()
