@@ -6,58 +6,18 @@ To include in your html code:
 
 */
 
-// class for text management
-class textClass {
-
-  #text;
-  #htmlText;
-  #misspelledWords;
-
-  constructor(text = '', htmlText = '', misspelledWords = []) {
-    this.#text = text
-    this.#htmlText = htmlText
-    this.#misspelledWords = misspelledWords
-  }
-
-  getPlainText() {
-    return this.#text;
-  }
-  updateText(tmp) {
-    this.#text = tmp;
-  }
-  getHtmlText() {
-    return this.#htmlText;
-  }
-  updateHtmlText(newHtmlText) {
-    this.#htmlText = newHtmlText;
-  }
-  getMisspelledWords() {
-    return this.#misspelledWords;
-  }
-  updateMisspelledWords(misspelledWordsList) {
-    this.#misspelledWords = misspelledWordsList;
-  }
-
-};
-
-// global text instance
-var textSingleton = new textClass()
 
 // Underline misspelled words
 $(document).ready(function () {
 
   document.getElementById("textArea").onkeyup = function (e) {
-    //var text_value = document.getElementById("textArea");
 
     text_value = $("#textArea").text();
 
-    text_html = document.getElementById("textArea");
-    text_html = text_html.innerHTML
-
-    //console.log(text_value.at(-1))
-
-    if (e.key == " " || (e.key == "Backspace")) {
-      //console.log("DETECTED")
+    if (e.key == " " || e.key == "Backspace") {
+      
+      spaceKey = "&nbsp"
+      textSingleton.cleanWords()
 
       // Ajax post request -> send text to backend
       $.ajax({
@@ -68,58 +28,61 @@ $(document).ready(function () {
         data: {
           'text': text_value
         },
-        // Return mispelled words -> underlining misspelled words
+        // Return misspelled words -> underlining misspelled words
+        // data = misspelled words
         success: function (data) {
           //console.log(text_value)
-          //console.log(data)
+          console.log("misspelled word from backend:", data)
           tmp = text_value
 
-          // check if misspelled word has been manually corrected using backspace
-          if (checkBackspace(e.key, data, tmp))
-            return
-
-          // update plain text (no html)
           textSingleton.updateText(tmp)
           console.log("current plain text: ", textSingleton.getPlainText())
-
-          // update misspelled words in the text
-          textSingleton.updateMisspelledWords(data)
-          console.log("current misspelled words: ", textSingleton.getMisspelledWords())
-
-          for (let i = 0; i < data.length; i++) {
-            word = data.at(i)
-            tmp = tmp.replace(word, '<span style="text-decoration: underline 2px red;">' + word + '</span>');
-            document.getElementById("textArea").innerHTML = tmp
-            console.log(tmp)
+          
+          // If there are misspelled words
+          if (data){
+            textSingleton.updateMisspelledWords(data)
+            
+            // Remove underlines if Backspace is pressed
+            if(e.key=="Backspace"){
+              textSingleton.removeUnderlines()
+              // Set cursor at the end of text area
+              elem = document.getElementById("textArea")
+              setEndOfContenteditable(elem);
+              return
+            }
+            
+            textSingleton.replaceHtmlText()
           }
 
-
           // update html text
+          console.log("[DEBUG] text html:", document.getElementById("textArea").innerHTML)
           textSingleton.updateHtmlText(document.getElementById("textArea").innerHTML)
-          console.log("current html text: ", textSingleton.getHtmlText())
-
-          //$("textArea").css('text-decoration','underline')
+          textSingleton.printWordList()
 
           // Set cursor at the end of text area
           elem = document.getElementById("textArea")
           setEndOfContenteditable(elem);
-
-          //$("#textArea").value = underlinedText.css('text-decoration', 'underline')
-
-          //alert(data);
-          //console.log(data);
-          //response(data);
         },
-        //error: function(jqXHR, textStatus, errorThrown) {
-        //    console.log(textStatus + " " + errorThrown);
-        //}
       });
     }
   }
 
 });
 
-// Set cursor at the end of text area
+
+function replaceMisspelling(text, replacedWord, replacedWordIndex){  
+  textSingleton.getPlainText.split(" ")
+  textSingleton.updateHtmlTokens[replacedWordIndex] = '<span style="text-decoration: underline 2px red;">' + replacedWord + '</span>&nbsp;'
+}
+
+function searchStringInArray (str, strArray) {
+  for (var j=0; j<strArray.length; j++) {
+      if (strArray[j].match(str)) return true;
+  }
+  return false;
+}
+
+// Set cursor at the end of text area || TODO: eliminate, this is wrong (cursor shouldn't slide to the end)
 function setEndOfContenteditable(contentEditableElement) {
   var range, selection;
   if (document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
@@ -136,7 +99,7 @@ function setEndOfContenteditable(contentEditableElement) {
     range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
     range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
     range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
-    range.select();//Select the range (make it the visible selection
+    range.select();//Select the range (make it the visible selection)
   }
 }
 
@@ -154,10 +117,11 @@ function arraysMatch(arr1, arr2) {
   return true;
 };
 
-function checkBackspace(key, data, text) {
+function checkBackspace(key, data) {
 
-  if ((key == "Backspace") && (!(arraysMatch(textSingleton.getMisspelledWords(), data)))) {
-    cleanHtmlTextFromUnderlines(text)
+  //if ((key == "Backspace") && (!(arraysMatch(textSingleton.getMisspelledWords(), data)))) {
+  if(key=="Backspace"){
+    textSingleton.removeUnderlines()
     // Set cursor at the end of text area
     elem = document.getElementById("textArea")
     setEndOfContenteditable(elem);
