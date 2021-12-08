@@ -40,7 +40,13 @@ def computeMispelledWords():
         wordIndex = dict()
 
         #  Get misspelled words with word indexes with context aware utility function
-        misspellings, wordIndex = utils.spellCheckText(utils.en, text)
+        dictTag = session.get('spellCheckLang', None)
+        if dictTag == "ga":
+            dictLang = utils.ga
+        else:
+            dictLang = utils.en
+
+        misspellings, wordIndex = utils.spellCheckText(dictLang, text)
         misspelledWordList = list()
         misspelledWordDict = dict()
 

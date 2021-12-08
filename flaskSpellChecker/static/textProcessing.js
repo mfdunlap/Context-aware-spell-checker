@@ -93,7 +93,7 @@ function displayMisspellings(wordToCheck, event, selectedWordIndex) {
 
   $.ajax({
     type: "POST",
-    url: "http://localhost:5000/selected",
+    url: "/selected",
     cache: false,
     dataType: "json",
     data: {

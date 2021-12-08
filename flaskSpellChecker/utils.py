@@ -6,7 +6,7 @@ from flaskSpellChecker import _dictionary
 
 # Dictionaries
 en = _dictionary.Dictionary('en')
-#ga = _dictionary.Dictionary('ga')
+ga = _dictionary.Dictionary('ga')
 
 
 def simpleChecker(text):

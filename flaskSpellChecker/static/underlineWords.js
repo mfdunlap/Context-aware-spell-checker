@@ -22,7 +22,7 @@ $(document).ready(function () {
       // Ajax post request -> send text to backend
       $.ajax({
         type: "POST",
-        url: "http://localhost:5000/",
+        url: "/",
         dataType: "json",
         cache: false,
         data: {

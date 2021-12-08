@@ -24,8 +24,8 @@ function setWebTextLang(lang, langID) {
 
 function setSpellCheckLang(spellCheckLang, langID) {
     console.log("Attempt to change dictionary to", spellCheckLang)
-    var elementID = '#spellCheckLang';
-    checkerLang = document.getElementById(langID).innerHTML;
+    var elementID = '#spellCheckLang',
+        checkerLang = document.getElementById(langID).innerHTML;
     changeText(elementID, checkerLang);
 
     $.ajax({
