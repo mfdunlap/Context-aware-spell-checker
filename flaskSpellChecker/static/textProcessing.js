@@ -28,11 +28,12 @@ $(document).ready(function () {
 $("#textArea").bind("contextmenu", function (event) {
   // Avoid the default contextMenu
   event.preventDefault();
-
+  var textAreaElement = document.getElementById("textArea")
   var selection = window.getSelection();
   var word = selectionToString(selection);
+  selectedWordIndex = getSelectedWordIndex(textAreaElement, word)
   console.log(word);
-  displayMisspellings(word, event);
+  displayMisspellings(word, event, selectedWordIndex);
 });
 
 function getSelectedWordIndex(textAreaElement, word, divId = "#textArea"){
