@@ -2,7 +2,8 @@ import configparser
 from spellchecker import SpellChecker
 import string
 import re
-from dictionary import Dictionary
+from flaskSpellChecker.dictionary import Dictionary
+from emoji import UNICODE_EMOJI
 
 def simpleChecker(text):
     
@@ -106,12 +107,19 @@ def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
     punct = string.punctuation
     wordIsPunct = all(c in punct for c in word)
 
+    #Check if word is emoji:
+    wordIsEmoji = word in UNICODE_EMOJI
+
     # Check if word is correctly spelled:
     word = word.strip(punct)
     wordIsValid = word in freqDict or word.lower() in freqDict
 
+    # Check if word is a tag:
+    tags = ["<USER>","<URL>","<HASHTAG>"]
+    wordIsTag = word in tags
+
     # Return empty list if valid term:
-    if wordIsNumBased or wordIsPunct or wordIsValid:
+    if wordIsNumBased or wordIsPunct or wordIsEmoji or wordIsTag or wordIsValid:
         return correctionsList
 
     correctionsList = getCorrections(dictionary, word, prevWord, nextWord, editDist)
