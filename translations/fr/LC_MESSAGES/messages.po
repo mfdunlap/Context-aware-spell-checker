@@ -1,0 +1,87 @@
+# French translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-12-07 11:46-0600\n"
+"PO-Revision-Date: 2021-12-06 16:38-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: flaskSpellChecker/templates/base.html:17
+msgid "Spell Checker"
+msgstr "Correcteur Orthographique"
+
+#: flaskSpellChecker/templates/base.html:24
+#: flaskSpellChecker/templates/base.html:80
+msgid "Context Aware Spell Checker"
+msgstr "Correcteur Orthographique Contextuel"
+
+#: flaskSpellChecker/templates/base.html:33
+msgid "Webpage Text Language"
+msgstr "Langue du Texte de la Page Web"
+
+#: flaskSpellChecker/templates/base.html:38
+#: flaskSpellChecker/templates/base.html:41
+#: flaskSpellChecker/templates/base.html:56
+#: flaskSpellChecker/templates/base.html:58
+msgid "English"
+msgstr "Anglais"
+
+#: flaskSpellChecker/templates/base.html:40
+msgid "German"
+msgstr "Allemand"
+
+#: flaskSpellChecker/templates/base.html:42
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: flaskSpellChecker/templates/base.html:43
+msgid "French"
+msgstr "Français"
+
+#: flaskSpellChecker/templates/base.html:44
+#: flaskSpellChecker/templates/base.html:59
+msgid "Irish"
+msgstr "Irlandais"
+
+#: flaskSpellChecker/templates/base.html:45
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: flaskSpellChecker/templates/base.html:51
+msgid "Spell Checker Language"
+msgstr "Langue du Correcteur Orthographique"
+
+#: flaskSpellChecker/templates/base.html:87
+msgid "Instructions"
+msgstr "Instructions"
+
+#: flaskSpellChecker/templates/base.html:90
+msgid "Insert text for spell correction in the box below."
+msgstr ""
+"Insérez du texte pour la correction orthographique dans la case ci-"
+"dessous."
+
+#: flaskSpellChecker/templates/base.html:92
+msgid ""
+"To get recommendations for misspelled words, either double-click or "
+"right-click the word."
+msgstr ""
+"Pour obtenir des recommandations concernant les mots mal orthographiés, "
+"double-cliquez ou cliquez avec le bouton droit sur le mot."
+
+#: flaskSpellChecker/templates/base.html:99
+msgid "Word Count"
+msgstr "Nombre de Mots"
+

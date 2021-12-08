@@ -223,19 +223,19 @@ if __name__ == "__main__":
 
     #text = "Sin, sin. SIn: SIN? xin, xin. XIn; XIN!"
 
-    text = "a xin an. Iúdá ajus! ró luath ag. ró l-uat-h ag"
+    #text = "a xin an. Iúdá ajus! ró luath ag. ró l-uat-h ag"
 
-    misspellings = spellCheckWord(ga, "xin")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", "a", "an")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", "a", "an")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", prevWord="a")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", prevWord="a")
+    #print("Xin Corrections:", misspellings)
 
-    misspellings = spellCheckWord(ga, "xin", nextWord="an")
-    print("Xin Corrections:", misspellings)
+    #misspellings = spellCheckWord(ga, "xin", nextWord="an")
+    #print("Xin Corrections:", misspellings)
 
     misspellings, index = spellCheckText(ga, text)
     print("Mispellings:", misspellings)

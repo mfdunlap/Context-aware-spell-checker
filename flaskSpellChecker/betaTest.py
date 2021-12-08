@@ -3,11 +3,14 @@ import csv
 import utils
 
 if __name__ == "__main__":
-    ga = Dictionary('ga', 50000)
+    ga = Dictionary('ga', 100000)
     
-    filePath = 'testFiles/testset/input.txt'
-    answerPath = 'testFiles/testset/betaTest_answers.tsv'
-    solutionsPath = 'testFiles/testset/corrections500.tsv'
+    #filePath = 'testFiles/testset/input.txt'
+    #answerPath = 'testFiles/testset/betaTest_answers.tsv'
+    #solutionsPath = 'testFiles/testset/corrections500.tsv'
+
+    filePath = 'testFiles/input-test/input-test.txt'
+    answerPath = 'testFiles/input-test/betaTest_answersFINAL.tsv'
 
     # Generate answers:
     with open(filePath, newline='\n', encoding='utf-8') as file:
@@ -39,8 +42,8 @@ if __name__ == "__main__":
             answerList.append(answer)
             counter += 1
             
-            if(i%1000 == 0):
-                print(str((i%1000)*10) + "% Complete")
+            if(i%6000 == 0):
+                print(str(int(i/600)) + "% Complete")
 
         print("Same number of answers and tokens:", counter == numWords)
         
@@ -52,29 +55,28 @@ if __name__ == "__main__":
             print(answerPath, "created.")
 
     # Check answers (testset only):
-    ourAnswerKey = list()
-    correctAnswers = 0
-    index = 1
+    #ourAnswerKey = list()
+    #correctAnswers = 0
+    #index = 1
 
-    with open(answerPath, newline='', encoding='utf-8') as ourAnswers:
-        answerReader = csv.reader(ourAnswers, delimiter="\t")
-        for row in answerReader:
-            if 0 <= index < len(row):
-                ourAnswerKey.append(row[index].strip())
+    #with open(answerPath, newline='', encoding='utf-8') as ourAnswers:
+    #    answerReader = csv.reader(ourAnswers, delimiter="\t")
+    #    for row in answerReader:
+    #        if 0 <= index < len(row):
+    #            ourAnswerKey.append(row[index].strip())
 
-    with open(solutionsPath, newline='', encoding='utf-8') as solutionKey:
-        solutionReader = csv.reader(solutionKey, delimiter="\t")
-        rowNum = 0
-        for row in solutionReader:
-            if 0 <= index < len(row):
-                if ourAnswerKey[rowNum] == row[index].strip():
-                    correctAnswers += 1
-                else:
-                    #print("ERROR(" + str(j+1) + ": Answer", ourAnswerKey[j], "should be", trueSolutionKey[j])
-                    pass
-                rowNum += 1
+    #with open(solutionsPath, newline='', encoding='utf-8') as solutionKey:
+    #    solutionReader = csv.reader(solutionKey, delimiter="\t")
+    #    rowNum = 0
+    #    for row in solutionReader:
+    #        if 0 <= index < len(row):
+    #            if ourAnswerKey[rowNum] == row[index].strip():
+    #                correctAnswers += 1
+    #            else:
+    #                #print("ERROR(" + str(j+1) + ": Answer", ourAnswerKey[j], "should be", trueSolutionKey[j])
+    #                pass
+    #            rowNum += 1
 
-    totalCorrections = len(ourAnswerKey)    
-    print("Percent Correct:", 100 * correctAnswers / totalCorrections)
-
-
+    #totalCorrections = len(ourAnswerKey)    
+    #print("Percent Correct:", 100 * correctAnswers / totalCorrections)
+    
