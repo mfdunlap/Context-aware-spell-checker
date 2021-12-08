@@ -1,12 +1,8 @@
-import configparser
-
-from nltk import util
-from flaskSpellChecker import utils, app, _dictionary
-from flask import render_template, request, flash, jsonify
+from werkzeug.datastructures import ContentSecurityPolicy
+from flaskSpellChecker import utils, app
+from flask import render_template, request, jsonify
 import json
-from configparser import ConfigParser
 from flaskSpellChecker import utils
-import os
 
 @app.route('/')
 @app.route('/home')
@@ -69,41 +65,34 @@ def computeMispelledWords():
 
         # Index dictionary of misspelled words
         wordIndex = dict()
-        #en = _dictionary.Dictionary('en')
-        
-        # OLD-- Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
-        #candidates, misspelled, idxDict = utils.simpleChecker(term)
 
         #  Get misspelled words with word indexes with context aware utility function
         misspellings, wordIndex = utils.spellCheckText(utils.en, text)
+        misspelledWordList = list()
+        misspelledWordDict = dict()
 
+        print("misspellings keys: ", list(misspellings.keys()))
+        
+        for contextedWord in list(misspellings.keys()):
+            print("contexted word: ", contextedWord)
+            print("misspelled text index: ", wordIndex[contextedWord])
+            # Three words: the misspelling is in the middle
+            if len(contextedWord.split())>2:
+                misspelledWord = contextedWord.split()[1]
+            else: misspelledWord = text.split()[wordIndex[contextedWord][0]]
+            # Add misspelled word to list of misspellings
+            misspelledWordList.append(misspelledWord)
+            misspelledWordList.append(wordIndex[contextedWord])
+            # Add correction to misspelled word
+            misspelledWordDict[misspelledWord] = misspellings[contextedWord]
 
-        print("[DEBUG] misspelled words: ", misspellings.keys)
-        print("[DEBUG] word indexes: ", wordIndex)
+        resp = jsonify(misspelledWordList if misspelledWordList else None)
 
-        print("[DEBUG] candidates: ", misspellings)
-
-
-        # Get the last mispelled word candidates
-        #if misspellings:
-        #    last_mispelled = misspelled[len(misspelled)-1]
-        #    last_candidate = candidates[str(last_mispelled)]
-        #    last_candidate = list([c for c in last_candidate])
-
-
-        # Set json url for results
-        SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        json_url = os.path.join(SITE_ROOT, "data", "results.json")
-        json_data = json.loads(open(json_url).read())
-        # Compute
-        filtered_dict = [v for v in json_data if text in v]
-        resp = jsonify(list(misspellings.keys()) if misspellings else None)
-    
         # Save misspelled words
         
         json_path = utils.getResultsPath()
         with open(json_path, "w") as f:
-            json.dump(misspellings, f, default=set_default)
+            json.dump(misspelledWordDict, f, default=set_default)
 
         #resp = jsonify(misspellings.keys)
         print(resp)
@@ -118,8 +107,8 @@ def forwardSuggestions():
     """
     if request.method == "POST":
      selected = request.form['test']
-     print('selected', selected)
-     misspelledDict = dict()
+     print('selected: ', selected)
+     #misspelledDict = dict()
      json_path = utils.getResultsPath()
 
 
@@ -127,7 +116,6 @@ def forwardSuggestions():
         misspelledDict = json.load(f)
     
         if selected in misspelledDict:
-            #print(misspelledDict[selected])
             return jsonify(misspelledDict[selected][:6])
             
     return render_template("base.html")
