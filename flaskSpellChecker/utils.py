@@ -6,6 +6,7 @@ from flaskSpellChecker import _dictionary
 
 # Dictionaries
 en = _dictionary.Dictionary('en')
+#ga = _dictionary.Dictionary('ga')
 
 
 def simpleChecker(text):
@@ -67,15 +68,15 @@ def spellCheckText(dictionary, text):
         if not contextedWord in misspellings:
             corrections = spellCheckWord(dictionary, word, prevWord, nextWord)
 
-            if corrections:
-                #misspellings[contextedWord] = corrections
-                #wordIndex[contextedWord] = [i]
-                misspellings[word] = corrections
-                wordIndex[word] = [i]
+            if corrections and corrections[0]!=-1:
+                misspellings[contextedWord] = corrections
+                wordIndex[contextedWord] = [i]
+                #misspellings[word] = corrections
+                #wordIndex[word] = [i]
 
         else:
-            #wordIndex[contextedWord].append(i)
-            wordIndex[word].append(i)
+            wordIndex[contextedWord].append(i)
+            #wordIndex[word].append(i)
 
     return misspellings, wordIndex
 
