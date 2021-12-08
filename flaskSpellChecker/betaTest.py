@@ -1,13 +1,25 @@
-from dictionary import Dictionary
+from flaskSpellChecker import utils
 import csv
-import utils
 
-if __name__ == "__main__":
-    ga = Dictionary('ga', 50000)
-    
-    filePath = 'testFiles/testset/input.txt'
-    answerPath = 'testFiles/testset/betaTest_answers.tsv'
-    solutionsPath = 'testFiles/testset/corrections500.tsv'
+if __name__ == "__main__":    
+    #dirRoot = 'flaskSpellChecker/testFiles/testset/'
+    #filePath = dirRoot + 'input.txt'
+    #answerPath = dirRoot + 'alphaTest_answers.tsv'
+    #solutionsPath = dirRoot + 'corrections500.tsv'
+    #lang = utils.ga
+    #numTests = 10000
+
+    #dirRoot = 'flaskSpellChecker/testFiles/input-test/'
+    #filePath = dirRoot + 'input-test.txt'
+    #answerPath = dirRoot + 'alphaTest_answersFINAL.tsv'
+    #lang = utils.ga
+    #numTests = 59000
+
+    dirRoot = 'flaskSpellChecker/testFiles/en-input/'
+    filePath = dirRoot + 'en-input.txt'
+    answerPath = dirRoot + 'enTest_answersFINAL.tsv'
+    lang = utils.en
+    numTests = 290
 
     # Generate answers:
     with open(filePath, newline='\n', encoding='utf-8') as file:
@@ -27,7 +39,7 @@ if __name__ == "__main__":
             if 0 <= i+1 < numWords:
                 nextWord = tokenList[i+1].strip()
 
-            corrections = utils.spellCheckWord(ga, word, prevWord, nextWord)
+            corrections = utils.spellCheckWord(lang, word, prevWord, nextWord)
 
             if not corrections:
                 answer = word
@@ -52,6 +64,7 @@ if __name__ == "__main__":
             print(answerPath, "created.")
 
     # Check answers (testset only):
+    """
     ourAnswerKey = list()
     correctAnswers = 0
     index = 1
@@ -76,5 +89,5 @@ if __name__ == "__main__":
 
     totalCorrections = len(ourAnswerKey)    
     print("Percent Correct:", 100 * correctAnswers / totalCorrections)
-
-
+    """
+    
