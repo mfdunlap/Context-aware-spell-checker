@@ -1,7 +1,6 @@
 function setWebTextLang(lang, langID) {
     console.log("Button Clicked", lang)
-    var elementID = '#webTextLang',
-        langTranslation = document.getElementById(langID).getAttribute('langVar');
+    var elementID = '#webTextLang';
 
     $.ajax({
         type: "POST",
@@ -21,6 +20,27 @@ function setWebTextLang(lang, langID) {
         },
     });
     
+}
+
+function setSpellCheckLang(spellCheckLang, langID) {
+    console.log("Attempt to change dictionary to", spellCheckLang)
+    var elementID = '#spellCheckLang',
+        checkerLang = document.getElementById(langID).innerHTML;
+    changeText(elementID, checkerLang);
+
+    $.ajax({
+        type: "POST",
+        url: "/set_checker_language",
+        cache: false,
+        dataType: "json",
+        data: {
+          'langCode': spellCheckLang,
+        },
+    
+        success: function (confirmation) {
+            console.log(confirmation);
+        },
+    });
 }
 
 window.onload = function() {

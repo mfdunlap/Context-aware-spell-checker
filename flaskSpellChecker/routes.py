@@ -9,13 +9,18 @@ def get_locale():
     try:
         return session['webTextLang']
     except:
-        return request.accept_languages.best_match(['de', 'en', 'es', 'fr', 'ga', 'pt'])
+        return 'en'
 
 @app.route('/')
 @app.route('/home')
 def default_page():
-    spellCheckLang = "en"
-    return render_template('base.html', spellCheckLang=spellCheckLang)
+    if not 'spellCheckLang' in session:
+        session['spellCheckLang'] = 'en'
+
+    if not 'webTextLang' in session:
+        session['webTextLang'] = 'en'
+
+    return render_template('base.html', spellCheckLang=session['spellCheckLang'])
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
@@ -28,39 +33,49 @@ def computeMispelledWords():
     if request.method=='POST' :
         
         # Retrieve test
-        term = request.form['text']
-        print('text: ', term)
+        text = request.form['text']
+        print('text: ', text)
 
         # Index dictionary of misspelled words
-        idxDict = dict()
+        wordIndex = dict()
+
+        #  Get misspelled words with word indexes with context aware utility function
+        dictTag = session.get('spellCheckLang', None)
+        if dictTag == "ga":
+            dictLang = utils.ga
+        else:
+            dictLang = utils.en
+
+        misspellings, wordIndex = utils.spellCheckText(dictLang, text)
+        misspelledWordList = list()
+        misspelledWordDict = dict()
+
+        print("misspellings keys: ", list(misspellings.keys()))
         
-        # Get the misspelled words, the candidates for correction and the indexes of the misspelled words in the text
-        candidates, misspelled, idxDict = utils.simpleChecker(term)
+        for contextedWord in list(misspellings.keys()):
+            print("contexted word: ", contextedWord)
+            print("misspelled text index: ", wordIndex[contextedWord])
+            # Three words: the misspelling is in the middle
+            if len(contextedWord.split())>2:
+                misspelledWord = contextedWord.split()[1]
+            else: misspelledWord = text.split()[wordIndex[contextedWord][0]]
+            # Add misspelled word to list of misspellings
+            misspelledWordList.append(misspelledWord)
+            misspelledWordList.append(wordIndex[contextedWord])
+            # Add correction to misspelled word
+            misspelledWordDict[misspelledWord] = misspellings[contextedWord]
 
-        # Get the last mispelled word candidates
-        if misspelled:
-            last_mispelled = misspelled[len(misspelled)-1]
-            last_candidate = candidates[str(last_mispelled)]
-            last_candidate = list([c for c in last_candidate])
+        resp = jsonify(misspelledWordList if misspelledWordList else None)
 
-
-        # Set json url for results
-        #SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        #json_url = os.path.join(SITE_ROOT, "data", "results.json")
-        #json_data = json.loads(open(json_url).read())
-        # Compute
-        #filtered_dict = [v for v in json_data if term in v]
-        #resp = jsonify(last_candidate if misspelled else None
-    
         # Save misspelled words
+        
         json_path = utils.getResultsPath()
         with open(json_path, "w") as f:
-            json.dump(candidates, f, default=set_default)
+            json.dump(misspelledWordDict, f, default=set_default)
 
-        resp = jsonify(misspelled)
+        #resp = jsonify(misspellings.keys)
         print(resp)
-        #resp = jsonify(misspelled)
-        #resp.status_code = 200
+        resp.status_code = 200
         return resp
 
 
@@ -71,8 +86,8 @@ def forwardSuggestions():
     """
     if request.method == "POST":
      selected = request.form['test']
-     print('selected', selected)
-     misspelledDict = dict()
+     print('selected: ', selected)
+     #misspelledDict = dict()
      json_path = utils.getResultsPath()
 
 
@@ -80,7 +95,6 @@ def forwardSuggestions():
         misspelledDict = json.load(f)
     
         if selected in misspelledDict:
-            #print(misspelledDict[selected])
             return jsonify(misspelledDict[selected][:6])
             
     return render_template("base.html")
@@ -92,7 +106,15 @@ def set_lang():
         session['webTextLang'] = webTextLang
         return jsonify({'Confirmation': 'SUCCESS'})
     return jsonify({'Confirmation': 'FAIL'})
-        
+
+@app.route('/set_checker_language', methods=['GET','POST'])
+def set_dictionary():
+    if request.method == "POST":
+        spellCheckLang = request.form['langCode']
+        session['spellCheckLang'] = spellCheckLang
+        print('Dictionary', session['spellCheckLang'])
+        return jsonify({'Confirmation': 'SUCCESS'})
+    return jsonify({'Confirmation': 'FAIL'})  
 
 def set_default(obj):
     if isinstance(obj, set):
