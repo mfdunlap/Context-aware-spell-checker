@@ -9,13 +9,18 @@ def get_locale():
     try:
         return session['webTextLang']
     except:
-        return request.accept_languages.best_match(['de', 'en', 'es', 'fr', 'ga', 'pt'])
+        return 'en'
 
 @app.route('/')
 @app.route('/home')
 def default_page():
-    spellCheckLang = "en"
-    return render_template('base.html', spellCheckLang=spellCheckLang)
+    if not 'spellCheckLang' in session:
+        session['spellCheckLang'] = 'en'
+
+    if not 'webTextLang' in session:
+        session['webTextLang'] = 'en'
+
+    return render_template('base.html', spellCheckLang=session['spellCheckLang'])
 
 @app.route('/', methods=['POST'])
 def computeMispelledWords():
@@ -95,7 +100,15 @@ def set_lang():
         session['webTextLang'] = webTextLang
         return jsonify({'Confirmation': 'SUCCESS'})
     return jsonify({'Confirmation': 'FAIL'})
-        
+
+@app.route('/set_checker_language', methods=['GET','POST'])
+def set_dictionary():
+    if request.method == "POST":
+        spellCheckLang = request.form['langCode']
+        session['spellCheckLang'] = spellCheckLang
+        print('Dictionary', session['spellCheckLang'])
+        return jsonify({'Confirmation': 'SUCCESS'})
+    return jsonify({'Confirmation': 'FAIL'})  
 
 def set_default(obj):
     if isinstance(obj, set):

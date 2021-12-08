@@ -55,8 +55,8 @@
                     <div class="dropdown">
                         <button id="spellCheckLang" class="dropbtn">{{ _('English') }}</button>
                         <ul id="spellCheckOptions" class="dropdown-content">
-                            <li spellCheckLang="en">{{ _('English') }}</li>
-                            <li spellCheckLang="ga">{{ _('Irish') }}</li>
+                            <li id="enDict" onclick="setSpellCheckLang('en', 'enDict')" spellCheckLang="en">{{ _('English') }}</li>
+                            <li id="gaDict" onclick="setSpellCheckLang('ga', 'gaDict')" spellCheckLang="ga">{{ _('Irish') }}</li>
                         </ul>
                     </div>
                 </li>
