@@ -76,13 +76,14 @@
     <body class="text-center">
         <br>
 
-        <h2>
-            {{ _('Context Aware Spell Checker') }}
-        </h2>
-
+        <div class="context-title">
+            <h2>
+                {{ _('Context Aware Spell Checker') }}
+            </h2>
+        </div>
         <br>
 
-        <div style="text-align:left; margin:auto; width:80%; height: 450px;">
+        <div class="context-instruction" style="text-align:left; margin:auto; width:80%; height: 450px;">
             <h5>
                 {{ _('Instructions') }}:
             </h5>
@@ -92,14 +93,12 @@
                 - {{ _('To get recommendations for misspelled words, either double-click or right-click the word.') }}
             </p>
 
-            <div contenteditable="true" id="textArea" lang="{{spellCheckLang}}"
-                style="margin:auto; padding:5px; width:100%; height:100%; text-align:left; background-color: #212121; color: white;">
-            </div>
-
-            <p>{{ _('Word Count') }}</p>
-        </div>
+            <div contenteditable="true" id="textArea" lang="{{spellCheckLang}}" data-placeholder="Type or paste your text here."
+            style="margin:auto; padding:5px; width:80%; height: 300px; text-align:left; background-color: rgb(255 255 255); color: black;border-radius: 10px;border: none;box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);"></div>
+            <h6 style="position: relative; top:10%; left:45%; font-family:verdana;"><span id="count">0 </span> words</h6>
 
     </body>
+
 
 
     <!-- JavaScript Scripts -->
@@ -123,6 +122,7 @@
     <script src="{{url_for('static', filename='textProcessing.js')}}"></script>
     <script src="{{url_for('static', filename='underlineWords.js')}}"></script>
     <script src="{{url_for('static', filename='textClass.js')}}"></script>
+    <script src="{{url_for('static', filename='wordcount.js')}}"></script>
 
 
 </body>
@@ -131,10 +131,28 @@
 <!-- Default Style Formats for body and context menu-->
 <style type="text/css">
     body {
-        background-color: #000000;
-        color: rgb(129, 199, 178)
+        background-color:aliceblue;
+        color: rgb(160, 160, 160) 
     }
 
+    div:empty::before {
+    color: grey;
+    }
+    div[data-placeholder]:not([data-placeholder=""]):empty::before {
+    content: attr(data-placeholder);
+    }
+    div:empty::before {
+    content: 'fallback placeholder';
+}
+
+ 
+    .context-title{
+        color: rgb(21, 157, 116)
+    }
+    
+    .context-instruction{
+        color: rgb(160, 160, 160)
+    }
 
     .context-menu {
         position: absolute;
