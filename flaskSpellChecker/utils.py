@@ -3,9 +3,13 @@ import emoji
 from spellchecker import SpellChecker
 import string
 import re
-from flaskSpellChecker.dictionary import Dictionary
+from flaskSpellChecker import _dictionary
 from emoji import UNICODE_EMOJI
 import unicodedata
+
+# Dictionaries
+en = _dictionary.Dictionary('en')
+ga = _dictionary.Dictionary('ga')
 
 def simpleChecker(text):
     
@@ -66,12 +70,16 @@ def spellCheckText(dictionary, text):
         if not contextedWord in misspellings:
             corrections = spellCheckWord(dictionary, word, prevWord, nextWord)
 
-            if corrections:
+            if corrections and corrections[0]!=-1:
                 misspellings[contextedWord] = corrections
                 wordIndex[contextedWord] = [i]
+                #misspellings[word] = corrections
+                #wordIndex[word] = [i]
+
         else:
             wordIndex[contextedWord].append(i)
-    
+            #wordIndex[word].append(i)
+
     return misspellings, wordIndex
 
 
@@ -216,10 +224,10 @@ def rankCorrections(dictionary, possibilities, prevWord="", nextWord=""):
 
     return rankedCorrections
 
-
+"""
 if __name__ == "__main__":
-    text = ""
-    #ga = Dictionary('ga')
+
+    ga = _dictionary.WordDictionary('ga')
 
     #    irishDict, prevDict, nextDict = generateIrishDictionary()
     #    print("Word: an")

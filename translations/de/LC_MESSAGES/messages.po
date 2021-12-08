@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-12-07 11:46-0600\n"
+"POT-Creation-Date: 2021-12-08 13:09-0600\n"
 "PO-Revision-Date: 2021-12-06 16:38-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -23,7 +23,7 @@ msgid "Spell Checker"
 msgstr "Rechtschreibprüfung"
 
 #: flaskSpellChecker/templates/base.html:24
-#: flaskSpellChecker/templates/base.html:80
+#: flaskSpellChecker/templates/base.html:81
 msgid "Context Aware Spell Checker"
 msgstr "Kontextsensitive Rechtschreibprüfung"
 
@@ -63,15 +63,15 @@ msgstr "Portugiesisch"
 msgid "Spell Checker Language"
 msgstr "Sprache der Rechtschreibprüfung"
 
-#: flaskSpellChecker/templates/base.html:87
+#: flaskSpellChecker/templates/base.html:88
 msgid "Instructions"
 msgstr "Anweisungen"
 
-#: flaskSpellChecker/templates/base.html:90
+#: flaskSpellChecker/templates/base.html:91
 msgid "Insert text for spell correction in the box below."
 msgstr "Fügen Sie Text zur Rechtschreibkorrektur in das Feld unten ein."
 
-#: flaskSpellChecker/templates/base.html:92
+#: flaskSpellChecker/templates/base.html:93
 msgid ""
 "To get recommendations for misspelled words, either double-click or "
 "right-click the word."
@@ -79,7 +79,10 @@ msgstr ""
 "Um Empfehlungen für falsch geschriebene Wörter zu erhalten, doppelklicken"
 " Sie auf das Wort oder klicken Sie mit der rechten Maustaste darauf."
 
-#: flaskSpellChecker/templates/base.html:99
-msgid "Word Count"
-msgstr "Wortzahl"
+#: flaskSpellChecker/templates/base.html:98
+msgid "words"
+msgstr "Wörter"
+
+#~ msgid "Word Count"
+#~ msgstr "Wortzahl"
 
