@@ -1,13 +1,15 @@
 import configparser
+import emoji
 from spellchecker import SpellChecker
 import string
 import re
 from flaskSpellChecker import _dictionary
+from emoji import UNICODE_EMOJI
+import unicodedata
 
 # Dictionaries
 en = _dictionary.Dictionary('en')
 ga = _dictionary.Dictionary('ga')
-
 
 def simpleChecker(text):
     
@@ -99,6 +101,7 @@ def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
 
     correctionsList = list()
     freqDict = dictionary.getWordFreq()
+    word = unicodedata.normalize('NFC', word)
     lenWord = len(word)
 
     # Determine appropriate edit distance from length of the word
@@ -115,12 +118,20 @@ def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
     punct = string.punctuation
     wordIsPunct = all(c in punct for c in word)
 
+    #Check if word is emoji:
+    emojis = [unicodedata.normalize('NFC',emote) for emote in UNICODE_EMOJI['en'].keys()]
+    wordIsEmoji = word in emojis
+
     # Check if word is correctly spelled:
     word = word.strip(punct)
     wordIsValid = word in freqDict or word.lower() in freqDict
 
+    # Check if word is a tag:
+    tags = ["<USER>","<URL>","<HASHTAG>"]
+    wordIsTag = word in tags
+
     # Return empty list if valid term:
-    if wordIsNumBased or wordIsPunct or wordIsValid:
+    if wordIsNumBased or wordIsPunct or wordIsEmoji or wordIsTag or wordIsValid:
         return correctionsList
 
     correctionsList = getCorrections(dictionary, word, prevWord, nextWord, editDist)
@@ -215,6 +226,7 @@ def rankCorrections(dictionary, possibilities, prevWord="", nextWord=""):
 
 """
 if __name__ == "__main__":
+
     ga = _dictionary.WordDictionary('ga')
 
     #    irishDict, prevDict, nextDict = generateIrishDictionary()
@@ -237,7 +249,13 @@ if __name__ == "__main__":
     #misspellings = spellCheckWord(ga, "xin", nextWord="an")
     #print("Xin Corrections:", misspellings)
 
-    misspellings, index = spellCheckText(ga, text)
-    print("Mispellings:", misspellings)
-    print("Indices:", index)
-"""
+    #misspellings, index = spellCheckText(ga, text)
+    #print("Mispellings:", misspellings)
+    #print("Indices:", index)
+
+    #while (text != "exit"):
+        #text = str(input("Enter text to spell check (Irish): "))
+        #misppellings, indicies = spellCheckText(ga, text)
+        #print("Misspellings:", misppellings)
+        #print("Indices of Mispellings:", indicies)
+        #print()

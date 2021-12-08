@@ -1,7 +1,7 @@
 function setWebTextLang(lang, langID) {
     console.log("Button Clicked", lang)
     var elementID = '#webTextLang';
-
+  
     $.ajax({
         type: "POST",
         url: "/set_webtext_language",

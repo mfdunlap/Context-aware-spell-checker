@@ -10,9 +10,9 @@ ar	ar
 thraic	thraic
 álainn	álainn
 <USER>	<USER>
-🏃🏽‍♀️	Misspelled but no correction found
-🏃🏿‍♀️	Misspelled but no correction found
-🏃‍♀️	Misspelled but no correction found
+🏃🏽‍♀️	🏃🏽‍♀️
+🏃🏿‍♀️	🏃🏿‍♀️
+🏃‍♀️	🏃‍♀️
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -273,12 +273,12 @@ inniu	inniu
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
-🤸‍♂️	Misspelled but no correction found
-🤸‍♀️	Misspelled but no correction found
-🏃‍♀️	Misspelled but no correction found
-🏃‍♂️	Misspelled but no correction found
-👭	a
-👭	a
+🤸‍♂️	🤸‍♂️
+🤸‍♀️	🤸‍♀️
+🏃‍♀️	🏃‍♀️
+🏃‍♂️	🏃‍♂️
+👭	👭
+👭	👭
 <URL>	<URL>
 \n	\n
 Tá	Tá
@@ -310,13 +310,13 @@ Chairn	Chairn
 inniú	inniú
 .	.
 Sochraide	Sochraide
-Mhaidc	Mhaidc
-Stiofáinín	Stiofáinín
+Mhaidc	Mhic
+Stiofáinín	Stiofáin
 Seoighe	Seoighe
 .	.
 BDLA	Misspelled but no correction found
 .	.
-Cairactéir	caractéir
+Cairactéir	Misspelled but no correction found
 specialta	specialta
 ,	,
 sar	sar
@@ -327,7 +327,7 @@ bheidh	bheidh
 a	a
 leithéid	leithéid
 arist	arist
-ánn	ánn
+ánn	ann
 ,	,
 \n	\n
 <USER>	<USER>
@@ -397,7 +397,7 @@ geansaí	geansaí
 An	An
 pose	pose
 seo	seo
-😜	a
+😜	😜
 Aesthetic	Aesthetic
 \n	\n
 <USER>	<USER>
@@ -405,7 +405,7 @@ Céard	Céard
 faoi	faoi
 scramaí	scéalaí
 nó	nó
-mí-ásach	mí-ásach
+mí-ásach	Misspelled but no correction found
 ?	?
 \n	\n
 Beidh	Beidh
@@ -416,7 +416,7 @@ ag	ag
 dul	dul
 chuig	chuig
 na	na
-Gobáin	Gobáin
+Gobáin	cosáin
 Dé	Dé
 Sathairn	Sathairn
 10	10
@@ -424,7 +424,7 @@ Deireadh	Deireadh
 Fómhair	Fómhair
 .	.
 Spásanna	Spásanna
-fíortheoranta	fíortheoranta
+fíortheoranta	Misspelled but no correction found
 .	.
 Bígí	Bígí
 gasta	gasta
@@ -520,7 +520,7 @@ Tusa	Tusa
 ag	ag
 labhairt	labhairt
 le	le
-teacosy	teacosy
+teacosy	teacs
 hahaha	hahaha
 Ach	Ach
 thar	thar
@@ -578,8 +578,8 @@ le	le
 <USER>	<USER>
 <USER>	<USER>
 Tá	Tá
-áitreamh	áitreamh
-leathacra	leathacra
+áitreamh	áitreabh
+leathacra	leathair
 do	do
 hainmhithe	hainmhithe
 fiáine	fiáine
@@ -620,7 +620,7 @@ craic	craic
 Ithe	Ithe
 sa	sa
 cheathrú	cheathrú
-seóirseach	seirfeach
+seóirseach	Misspelled but no correction found
 !	!
 <HASHTAG>	<HASHTAG>
 !	!
@@ -686,7 +686,7 @@ díreach	díreach
 in	in
 umar	umar
 na	na
-nGIFeanna	nGIFeanna
+nGIFeanna	Misspelled but no correction found
 ?	?
 (	(
 Fothram	Fothram
@@ -771,7 +771,7 @@ Watch	Watch
 “	a
 S	S
 &iacute;	cute
-olta	olta
+olta	ólta
 an	an
 Earraigh	Earraigh
 ,	,
@@ -841,7 +841,7 @@ thú	thú
 Féir	Féir
 plé	plé
 .	.
-FíorGhael	FíorGhael
+FíorGhael	Fíorghael
 \n	\n
 Ní	Ní
 féidir	féidir
@@ -855,9 +855,9 @@ scríobh	scríobh
 .	.
 .	.
 .	.
-🎄	a
-🎅	a
-🤶	a
+🎄	🎄
+🎅	🎅
+🤶	🤶
 <URL>	<URL>
 \n	\n
 Instagrammers	Misspelled but no correction found
@@ -1042,7 +1042,7 @@ stáit	stáit
 dúnta	dúnta
 ag	ag
 an	an
-ngobharnóir	ngobharnóir
+ngobharnóir	gobharnóir
 inniu	inniu
 ,	,
 mar	mar
@@ -1058,7 +1058,7 @@ airde	airde
 17F	17
 /	/
 -	-
-27C	27C
+27C	27
 )	)
 's	's
 ar	ar
@@ -1176,7 +1176,7 @@ ná	ná
 ar	ar
 chaint	chaint
 na	na
-ngnathdhaoine	ngnáthdaoine
+ngnathdhaoine	ngnáthdhaoine
 ar	ar
 an	an
 taobh	taobh
@@ -1190,7 +1190,7 @@ na	na
 Gaeilge	Gaeilge
 leis	leis
 an	an
-meán-aicme	meán-aicme
+meán-aicme	mheánaicme
 amháin	amháin
 ?	?
 \n	\n
@@ -1286,7 +1286,7 @@ Aduaidh	Aduaidh
 Séideán	Séideán
 láidir	láidir
 :	:
-44km	44km
+44km	4km
 /	/
 h	h
 )	)
@@ -1345,7 +1345,7 @@ ar	ar
 an	an
 loch	loch
 a	a
-bheadsa	bheadsa
+bheadsa	bheas
 inniu	inniu
 :)	:)
 \n	\n
@@ -1462,7 +1462,7 @@ inniu	inniu
 ar	ar
 ghiniúint	ghiniúint
 ár	ár
-ndaonlathais	ndaonlathais
+ndaonlathais	daonlathais
 agus	agus
 ar	ar
 an	an
@@ -1505,7 +1505,7 @@ leithscéal	leithscéal
 .	.
 Ba	Ba
 é	é
-llif	llif
+llif	Misspelled but no correction found
 a	a
 bhí	bhí
 ar	ar
@@ -1522,7 +1522,7 @@ gur	gur
 mar	mar
 '	'
 epenthic	Misspelled but no correction found
-vowels	vowels
+vowels	powers
 '	'
 a	a
 bhí	bhí
@@ -1653,7 +1653,7 @@ tírghráthóirí	tírghráthóirí
 iad	iad
 agus	agus
 go	go
-sáfaidh	sáfaidh
+sáfaidh	sásóidh
 siad	siad
 a	a
 gcuid	gcuid
@@ -1707,7 +1707,7 @@ maidin	maidin
 <USER>	<USER>
 cleas	cleas
 man	man
-scriosais	scriosach
+scriosais	scriosadh
 leis	leis
 é	é
 .	.
@@ -1721,7 +1721,7 @@ Am	Am
 (	(
 sic	sic
 )	)
-riosta	riosta
+riosta	bposta
 againn	againn
 <HASHTAG>	<HASHTAG>
 \n	\n
@@ -1826,7 +1826,7 @@ traenáil	traenáil
 Beidh	Beidh
 muid	muid
 ar	ar
-news2day	news2day
+news2day	Misspelled but no correction found
 má	má
 tá	tá
 sibh	sibh
@@ -1910,7 +1910,7 @@ the	the
 Song	Song
 Tradition	Tradition
 of	of
-Iveragh	Iveragh
+Iveragh	Iveagh
 by	by
 Tim	Tim
 Dennehy	Dennehy
@@ -2007,7 +2007,7 @@ eile	eile
 ag	ag
 <HASHTAG>	<HASHTAG>
 inniu	inniu
-👇	a
+👇	👇
 Bhuail	Bhuail
 muid	muid
 leis	leis
@@ -2045,14 +2045,14 @@ uilig	uilig
 ar	ar
 an	an
 chlár	chlár
-👇	a
+👇	👇
 <URL>	<URL>
 \n	\n
 GEARÁN	GEARÁN
 :	:
 Mar	Mar
 níl	níl
-leagan-amach	leagan-amach
+leagan-amach	Misspelled but no correction found
 Iris	Iris
 Oifigiúil	Oifigiúil
 Dhátheangach	Dhátheangach
@@ -2222,7 +2222,7 @@ do	do
 chuid	chuid
 oibre	oibre
 .	.
-✍️	Misspelled but no correction found
+✍️	✍️
 \n	\n
 An	An
 bhfuil	bhfuil
@@ -2248,7 +2248,7 @@ orm	orm
 dul	dul
 isteach	isteach
 chun	chun
-haló	haló
+haló	éaló
 a	a
 rá	rá
 .	.
@@ -2298,7 +2298,7 @@ ealaíontóirí	ealaíontóirí
 áitiúla	áitiúla
 le	le
 11,000	11,000
-cuirteoirí	cuirteoirí
+cuirteoirí	cainteoirí
 <USER>	<USER>
 <URL>	<URL>
 \n	\n
@@ -2426,7 +2426,7 @@ ceoil	ceoil
 cáiliúil	cáiliúil
 Meiriceánach	Meiriceánach
 '	'
-Blink	Blink
+Blink	linn
 182	182
 '	'
 .	.
@@ -2459,7 +2459,7 @@ tú	tú
 liom	liom
 é	é
 ?	?
-😥	a
+😥	😥
 \n	\n
 <USER>	<USER>
 <USER>	<USER>
@@ -2519,14 +2519,14 @@ phew	phew
 <USER>	<USER>
 Coiscéim	Coiscéim
 a	a
-dfhoilsigh	dfhoilsigh
+dfhoilsigh	shoilsigh
 díreach	díreach
 uathu	uathu
 ?	?
 \n	\n
 Timpiste	Timpiste
 traenach	traenach
-slómó	slómó
+slómó	lógó
 na	na
 Gaeltachta	Gaeltachta
 :	:
@@ -2611,7 +2611,7 @@ courtesy	courtesy
 is	is
 tú	tú
 an	an
-t-eisceacht	t-eisceacht
+t-eisceacht	eisceacht
 mar	mar
 is	is
 gnáth	gnáth
@@ -2634,7 +2634,7 @@ ba	ba
 thar	thar
 lear	lear
 !	!
-Faraway	Faraway
+Faraway	Misspelled but no correction found
 hills	hills
 are	are
 green	green
@@ -2697,9 +2697,9 @@ tnúth	tnúth
 go	go
 mór	mór
 leis	leis
-😁	a
-🇮🇪	Misspelled but no correction found
-❤	a
+😁	😁
+🇮🇪	🇮🇪
+❤	❤
 \n	\n
 Seoladh	Seoladh
 leabhair	leabhair
@@ -2762,7 +2762,7 @@ in	in
 aithne	aithne
 dá	dá
 chéile	chéile
-😻	a
+😻	😻
 <HASHTAG>	<HASHTAG>
 \n	\n
 Comhghairdeas	Comhghairdeas
@@ -2794,7 +2794,7 @@ Olc	Olc
 an	an
 Ghaoth	Ghaoth
 :	:
-Commended	Commended
+Commended	commenced
 in	in
 the	the
 Entertainment	Entertainment
@@ -2812,7 +2812,7 @@ Circom	Circom
 <URL>	<URL>
 \n	\n
 Frances	Frances
-fitzgerald	mfitzgerald
+fitzgerald	Misspelled but no correction found
 in	in
 áit	áit
 Alan	Alan
@@ -2828,7 +2828,7 @@ an	an
 ceart	ceart
 ag	ag
 harry	harry
-mcgee	macge
+mcgee	mee
 ar	ar
 adhmhaidin	adhmhaidin
 ar	ar
@@ -2837,7 +2837,7 @@ maidin	maidin
 \n	\n
 An	An
 .	.
-Maidirin	Maidrín
+Maidirin	Maidir
 rua	rua
 !	!
 <URL>	<URL>
@@ -2985,7 +2985,7 @@ ag	ag
 iarradh	iarradh
 bheith	bheith
 ina	ina
-Rí-Pádraig	Rí-Pádraig
+Rí-Pádraig	Misspelled but no correction found
 Breatnach	Breatnach
 \n	\n
 <USER>	<USER>
@@ -3060,7 +3060,7 @@ Nollag	Nollag
 Go	Go
 n'éirí	n'éirí
 leat	leat
-👍	a
+👍	👍
 \n	\n
 No	No
 Ó	Ó
@@ -3104,7 +3104,7 @@ bunaithe	bunaithe
 ar	ar
 dúshaothrú	dúshaothrú
 i	i
-monarchain	monarchain
+monarchain	monarcha
 dá	dá
 gcuid	gcuid
 .	.
@@ -3124,7 +3124,7 @@ A	A
 real	real
 pleasure	pleasure
 Megan	Megan
-🎶	a
+🎶	🎶
 agus	agus
 fáilte	fáilte
 .	.
@@ -3134,7 +3134,7 @@ fáilte	fáilte
 Is	Is
 i	i
 mo	mo
-dhornálaithe	dhornálaithe
+dhornálaithe	dornálaithe
 a	a
 chodlaím	chodlaím
 .	.
@@ -3176,7 +3176,7 @@ sí	sí
 ag	ag
 leamh	leamh
 i	i
-Dubray	Dubray
+Dubray	Dubai
 Gaillimh	Gaillimh
 ar	ar
 maidin	maidin
@@ -3195,8 +3195,8 @@ Beidh	Beidh
 mé	mé
 Ceart	Ceart
 go	go
-leoooooooor	seoooooooo
-😆	a
+leoooooooor	Misspelled but no correction found
+😆	😆
 \n	\n
 €	a
 150,000	150,000
@@ -3240,7 +3240,7 @@ domhanda	domhanda
 den	den
 scoth	scoth
 &	&
-neamh-coitianta	neamh-coitianta
+neamh-coitianta	neamhchoitianta
 !	!
 \n	\n
 Séanann	Séanann
@@ -3317,7 +3317,7 @@ m’Athar	mbóthar
 ,	,
 agus	agus
 a	a
-fhanaim	fhanaim
+fhanaim	chasaim
 ina	ina
 ghrá	ghrá
 .	.
@@ -3329,14 +3329,14 @@ don	don
 lá	lá
 inniu	inniu
 :	:
-#粵語	#粵語
-#廣東話	#廣東話
+#粵語	Misspelled but no correction found
+#廣東話	Misspelled but no correction found
 #廣州話	Misspelled but no correction found
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
 #廣府話	Misspelled but no correction found
-#白話	#白話
-#香港	#香港
+#白話	Misspelled but no correction found
+#香港	Misspelled but no correction found
 <HASHTAG>	<HASHTAG>
 <URL>	<URL>
 \n	\n
@@ -3367,7 +3367,7 @@ Gaeilge	Gaeilge
 <USER>	<USER>
 Cuireann	Cuireann
 siad	siad
-cailceanna	cailceanna
+cailceanna	cainteanna
 is	is
 gcuimhne	gcuimhne
 dom	dom
@@ -3435,7 +3435,7 @@ shin	shin
 Mar	Mar
 sin	sin
 beidh	beidh
-ana-shuim	ana-shuim
+ana-shuim	an-suim
 agam	agam
 sa	sa
 liosta	liosta
@@ -3502,7 +3502,7 @@ Paddy	Paddy
 Scéala	Scéala
 báis	báis
 fá	fá
-shean-chomrádaí	shean-chomrádaí
+shean-chomrádaí	sheanchomrádaí
 liom	liom
 a	a
 chuir	chuir
@@ -3600,7 +3600,7 @@ in	in
 aon	aon
 chor	chor
 \n	\n
-Boghaisín	Boghaisín
+Boghaisín	Misspelled but no correction found
 Bheag	Bheag
 i	i
 mBaile	mBaile
@@ -3608,7 +3608,7 @@ na	na
 nGall	nGall
 inniu	inniu
 .	.
-🌈	a
+🌈	🌈
 <URL>	<URL>
 \n	\n
 Níl	Níl
@@ -3625,7 +3625,7 @@ fáth	fáth
 ?	?
 Cén	Cén
 %	%
-d'ospidéil	d'ospidéil
+d'ospidéil	ospidéil
 na	na
 tíre	tíre
 atá	atá
@@ -3792,7 +3792,7 @@ Príomhfheidhmeannach	Príomhfheidhmeannach
 na	na
 <USER>	<USER>
 Virginia	Virginia
-Teehan	Teehan
+Teehan	Than
 “	a
 Iarraimid	Iarraimid
 oraibhse	oraibhse
@@ -3861,7 +3861,7 @@ canúintí	canúintí
 ar	ar
 fad	fad
 ar	ar
-aonfhocal	aonfhocal
+aonfhocal	ainmfhocal
 shílfeá	shílfeá
 :-)	:-)
 \n	\n
@@ -3888,7 +3888,7 @@ mé	mé
 riamh	riamh
 é	é
 .	.
-Léitir	Léitir
+Léitir	litir
 a	a
 leithéid	leithéid
 ,	,
@@ -3917,13 +3917,13 @@ Déardaoin	Déardaoin
 <HASHTAG>	<HASHTAG>
 \n	\n
 Is	Is
-aithghéar	athghéar
+aithghéar	Misspelled but no correction found
 an	an
 ghaoth	ghaoth
 anocht	anocht
 ,	,
-croitear	croitear
-fionnfholt	fionnfholt
+croitear	chaitear
+fionnfholt	Misspelled but no correction found
 farraige	farraige
 :	:
 ní	ní
@@ -3945,7 +3945,7 @@ Is	Is
 maith	maith
 liom	liom
 an	an
-comhoideas	comhairdeas
+comhoideas	Misspelled but no correction found
 sin	sin
 \n	\n
 Bronntanas	Bronntanas
@@ -3965,7 +3965,7 @@ agam	agam
 go	go
 mbeidh	mbeidh
 Ó	Ó
-hAisibéil	hAisibéil
+hAisibéil	Misspelled but no correction found
 luaite	luaite
 ann	ann
 !	!
@@ -4051,7 +4051,7 @@ bhfuil	bhfuil
 tú	tú
 ag	ag
 lickeáil	ciceáil
-spittles	settles
+spittles	Misspelled but no correction found
 anois	anois
 <USER>	<USER>
 <URL>	<URL>
@@ -4077,26 +4077,26 @@ seo	seo
 .	.
 <URL>	<URL>
 \n	\n
-🔸	a
+🔸	🔸
 Amhráin	Amhráin
 Ghaeilge	Ghaeilge
-🔹	a
+🔹	🔹
 Daoine	Daoine
 óga	óga
-🔸	a
+🔸	🔸
 Craic	Craic
 (	(
 agus	agus
 conspóid	conspóid
 scaití	scaití
-😄	a
+😄	😄
 )	)
-🔹	a
+🔹	🔹
 Aoi	Aoi
 speisialta	speisialta
 chuile	chuile
 sheachtain	sheachtain
-✨	a
+✨	✨
 Bígí	Bígí
 i	i
 dteannta	dteannta
@@ -4108,7 +4108,7 @@ dteannta	dteannta
 ANOCHT	ANOCHT
 ar	ar
 <HASHTAG>	<HASHTAG>
-✨	a
+✨	✨
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -4126,7 +4126,7 @@ tnúth	tnúth
 go	go
 mór	mór
 leis	leis
-☺	a
+☺	☺
 \n	\n
 <USER>	<USER>
 N'fheadar	N'fheadar
@@ -4137,7 +4137,7 @@ daltaí	daltaí
 céanna	céanna
 anois	anois
 ?	?
-😀	a
+😀	😀
 \n	\n
 Lá	Lá
 geal	geal
@@ -4173,8 +4173,8 @@ chol	chol
 ceathrar	ceathrar
 chomh	chomh
 cliste	cliste
-🥰	a
-🥰	a
+🥰	🥰
+🥰	🥰
 <URL>	<URL>
 \n	\n
 Comhgairdeachas	Comhgairdeachas
@@ -4192,7 +4192,7 @@ maith	maith
 is	is
 dócha	dócha
 !	!
-😉	a
+😉	😉
 <URL>	<URL>
 <URL>	<URL>
 \n	\n
@@ -4232,7 +4232,7 @@ ról	ról
 na	na
 Gaelainne	Gaelainne
 sna	sna
-H-Blocanna	mBlocanna
+H-Blocanna	H-Bhlocanna
 i	i
 dTuaisceart	dTuaisceart
 Éireann	Éireann
@@ -4266,14 +4266,14 @@ cuma	cuma
 fá	fá
 na	na
 flippin	flippin
-italics	italics
+italics	Misspelled but no correction found
 tá	tá
 an	an
 t-ábhar	t-ábhar
 suimiúil	suimiúil
 !	!
 '	'
-drochmheon	drochmheon
+drochmheon	drochmheas
 .	.
 \n	\n
 <USER>	<USER>
@@ -4427,13 +4427,13 @@ ar	ar
 chúl	chúl
 an	an
 scornach	scornach
-😳	a
-😳	a
-😳	a
+😳	😳
+😳	😳
+😳	😳
 Shook	Shook
 .	.
-Grmaaaa	Grmaaaa
-❤️	Misspelled but no correction found
+Grmaaaa	Misspelled but no correction found
+❤️	❤️
 \n	\n
 Níorbh	Níorbh
 é	é
@@ -4510,20 +4510,20 @@ Fheirtéaraigh	Fheirtéaraigh
 Trá	Trá
 Lí	Lí
 .	.
-9ú-10ú	9ú-10ú
+9ú-10ú	9-10
 Feabhra	Feabhra
 2018	2018
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
-Hailo	Hailo
+Hailo	baile
 ?	?
 Uber	Uber
 ?	?
-Tiomáinithe	Tiomáinithe
+Tiomáinithe	Tiománaithe
 neamhoifigiúil	neamhoifigiúil
 ?	?
-Tiomáinithe	Tiomáinithe
+Tiomáinithe	Tiománaithe
 veain	veain
 is	is
 leoraí	leoraí
@@ -4691,8 +4691,8 @@ mbeidh	mbeidh
 tú	tú
 ann	ann
 ?	?
-🗣️	Misspelled but no correction found
-📣	a
+🗣️	🗣️
+📣	📣
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -4962,7 +4962,7 @@ i	i
 bhfianaise	bhfianaise
 fhoilsiú	fhoilsiú
 an	an
-dréacht-chomhaontaithe	dréacht-chomhaontaithe
+dréacht-chomhaontaithe	Misspelled but no correction found
 um	um
 tharraingt	tharraingt
 siar	siar
@@ -4987,14 +4987,14 @@ Caoimhe	Caoimhe
 Nic	Nic
 Ghiobúin	Ghiobúin
 ,	,
-CAH	CAH
+CAH	ACH
 ,	,
 Luimneach	Luimneach
 2nd	2nd
 .	.
 Cara	Cara
 Ní	Ní
-Chiarba	Chiarba
+Chiarba	Charra
 ,	,
 Craobh	Craobh
 na	na
@@ -5071,9 +5071,9 @@ ach	ach
 traein	traein
 na	na
 ngléibhlí	Misspelled but no correction found
-😉	a
-😍	a
-👍	a
+😉	😉
+😍	😍
+👍	👍
 <URL>	<URL>
 \n	\n
 Good	Good
@@ -5129,7 +5129,7 @@ beag	beag
 seo	seo
 ,	,
 comhoibriú	comhoibriú
-Seapánach-Éireannach	Seapánach-Éireannach
+Seapánach-Éireannach	Misspelled but no correction found
 atá	atá
 sa	sa
 seó	seó
@@ -5178,9 +5178,9 @@ sibh	sibh
 .	.
 Fan	Fan
 Slán	Slán
-💉	a
-💉	a
-💉	a
+💉	💉
+💉	💉
+💉	💉
 \n	\n
 Thomas	Thomas
 Moriarty	Moriarty
@@ -5196,7 +5196,7 @@ Thiar	Thiar
 Úsáideann	Úsáideann
 sé	sé
 an	an
-seana-líne	seanlíne
+seana-líne	Misspelled but no correction found
 chun	chun
 dul	dul
 dtí	dtí
@@ -5207,7 +5207,7 @@ agus	agus
 sé	sé
 é	é
 mar	mar
-fhothain	fhothain
+fhothain	dhóthain
 dona	dona
 ainmhithe	ainmhithe
 i	i
@@ -5230,9 +5230,9 @@ café	café
 Chaisleán	Chaisleán
 Uidhlín	Uidhlín
 ,	,
-10rn-11rn	10rn-1in
+10rn-11rn	Misspelled but no correction found
 Dé	Dé
-hAione	hAione
+hAione	hAoine
 ,	,
 9ú	9ú
 Deireadh	Deireadh
@@ -5350,7 +5350,7 @@ cúirte	cúirte
 ^	^
 ^	^
 ^	^
-Fearaim	Fearaim
+Fearaim	ceapaim
 cuireadh	cuireadh
 chun	chun
 na	na
@@ -5384,12 +5384,12 @@ ann	ann
 ach	ach
 seal	seal
 bhur	bhur
-gcuairte	gcuairte
+gcuairte	gcairde
 """"	""""
 ann	ann
 freisin	freisin
 .	.
-Momento	Momento
+Momento	moment
 mori	mori
 \n	\n
 <USER>	<USER>
@@ -5476,7 +5476,7 @@ míle	míle
 maith	maith
 agat	agat
 Róisín	Róisín
-🐌	a
+🐌	🐌
 .	.
 Rinne	Rinne
 tú	tú
@@ -5490,10 +5490,10 @@ ar	ar
 fab	fab
 make	make
 up	up
-artistry	artistry
+artistry	artist
 last	last
 night	night
-🐌	a
+🐌	🐌
 xxx	xxx
 A	A
 \n	\n
@@ -5502,7 +5502,7 @@ Nod	Nod
 leat	leat
 go	go
 mbraitheann	mbraitheann
-chomp	chomp
+chomp	chor
 ar	ar
 an	an
 luach	luach
@@ -5554,7 +5554,7 @@ o	o
 CnaC	CnaC
 é	é
 gan	gan
-dabhat	dabhat
+dabhat	dabht
 ,	,
 níl	níl
 aon	aon
@@ -5569,7 +5569,7 @@ deas	deas
 an	an
 bonn	bonn
 a	a
-féiscint	féiscint
+féiscint	fheiscint
 sa	sa
 bhosca	bhosca
 bunaidh	bunaidh
@@ -5597,7 +5597,7 @@ ERC	ERC
 &	&
 CUP	CUP
 faoi	faoi
-féinchinntiúchán	féinchinntiúchán
+féinchinntiúchán	féinchinntiúcháin
 le	le
 plé	plé
 .	.
@@ -5711,7 +5711,7 @@ an	an
 lae	lae
 amáirigh	amáirigh
 go	go
-ndeineadh	ndeineadh
+ndeineadh	ndeanfadh
 sé	sé
 inniu	inniu
 .	.
@@ -5733,9 +5733,9 @@ raibh	raibh
 maith	maith
 agat	agat
 a	a
-comhrádaí	comhrádaí
+comhrádaí	chomrádaí
 ✊️	Misspelled but no correction found
-🇮🇪	Misspelled but no correction found
+🇮🇪	🇮🇪
 \n	\n
 .	.
 <USER>	<USER>
@@ -5764,9 +5764,9 @@ plé	plé
 don	don
 bheirt	bheirt
 agaibh	agaibh
-👏	a
-👏	a
-👏	a
+👏	👏
+👏	👏
+👏	👏
 \n	\n
 '	'
 Dlí	Dlí
@@ -5888,7 +5888,7 @@ gcónaí	gcónaí
 do	do
 chearta	chearta
 bunúsacha	bunúsacha
-👉🏿	Misspelled but no correction found
+👉🏿	👉🏿
 <URL>	<URL>
 <HASHTAG>	<HASHTAG>
 <URL>	<URL>
@@ -6097,7 +6097,7 @@ na	na
 gaoithe	gaoithe
 lá	lá
 na	na
-scoilbe	scoilbe
+scoilbe	scolb
 !	!
 \n	\n
 .	.
@@ -6133,7 +6133,7 @@ chéad	chéad
 dé	dé
 Máirt	Máirt
 den	den
-t-solas	t-solas
+t-solas	tsolas
 úr	úr
 Dé	Dé
 Máirt	Máirt
@@ -6215,7 +6215,7 @@ táim	táim
 ag	ag
 éisteacht	éisteacht
 Django	Django
-Rheinhart	Reinhart
+Rheinhart	Reinhard
 .	.
 \n	\n
 <USER>	<USER>
@@ -6274,7 +6274,7 @@ Clár	Clár
 uaigneach	uaigneach
 ach	ach
 cumhachtach	cumhachtach
-❤	a
+❤	❤
 \n	\n
 <USER>	<USER>
 Oh	Oh
@@ -6302,7 +6302,7 @@ tarlú	tarlú
 'Seanachaí'Sessn	Misspelled but no correction found
 amárach	amárach
 <USER>	<USER>
-BaileNaGall	BailenanGall
+BaileNaGall	Misspelled but no correction found
 ,	,
 An	An
 Rinn	Rinn
@@ -6366,8 +6366,8 @@ ar	ar
 fhoireann	fhoireann
 Aontroma	Aontroma
 !	!
-Uppa	Uppr
-Saffs	Saffs
+Uppa	Misspelled but no correction found
+Saffs	uafás
 !	!
 !	!
 !	!
@@ -6446,7 +6446,7 @@ pm	pm
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
-Fáigheann	Fáigheann
+Fáigheann	Faigheann
 mise	mise
 neart	neart
 ,	,
@@ -6613,7 +6613,7 @@ aréir	aréir
 <URL>	<URL>
 \n	\n
 Ó	Ó
-Doolin	Doolin
+Doolin	Dolan
 go	go
 Poblacht	Poblacht
 Mailí	Mailí
@@ -6627,7 +6627,7 @@ seinnt	seinnt
 &	&
 ag	ag
 canadh	canadh
-sean-amhrán	sean-amhrán
+sean-amhrán	seanamhrán
 naofa	naofa
 """"	""""
 Forobana	Misspelled but no correction found
@@ -6672,7 +6672,7 @@ drámaí	drámaí
 Giúdais	Giúdais
 ann	ann
 i	i
-Rathmines	Rathmines
+Rathmines	Misspelled but no correction found
 i	i
 mBÁC	mBÁC
 sna	sna
@@ -6796,7 +6796,7 @@ as	as
 fir	fir
 ,	,
 1	1
-dinosaur	dinosaur
+dinosaur	Misspelled but no correction found
 ag	ag
 taisteal	taisteal
 farraige	farraige
@@ -6823,7 +6823,7 @@ spiorad	spiorad
 ,	,
 agus	agus
 faoin	faoin
-gcomrádaíocht	gcomrádaíocht
+gcomrádaíocht	chomrádaíocht
 a	a
 bhí	bhí
 acu	acu
@@ -6970,7 +6970,7 @@ maith	maith
 Aibreán	Aibreán
 2018	2018
 (	(
-7pm-8pm	7pm-8pm
+7pm-8pm	7-8pm
 )	)
 :	:
 Seimineár	Seimineár
@@ -7041,7 +7041,7 @@ sin	sin
 <USER>	<USER>
 Míle	Míle
 Buíochas	Buíochas
-🌸	a
+🌸	🌸
 \n	\n
 Ceirtlín	Ceirtlín
 de	de
@@ -7065,8 +7065,8 @@ costasach	costasach
 uimh	uimh
 &	&
 lit	lit
-👏	a
-👏	a
+👏	👏
+👏	👏
 \n	\n
 Mar	Mar
 a	a
@@ -7076,7 +7076,7 @@ inné	inné
 i	i
 mBéal	mBéal
 Feirste	Feirste
-Uííí	úííí
+Uííí	Misspelled but no correction found
 !	!
 Síos	Síos
 gach	gach
@@ -7164,7 +7164,7 @@ nua	nua
 le	le
 <USER>	<USER>
 An	An
-Bhreasaíl	Bhreasaíl
+Bhreasaíl	Bhrasaíl
 agus	agus
 Talamh	Talamh
 sa	sa
@@ -7188,7 +7188,7 @@ go	go
 dtí	dtí
 monarcha	monarcha
 seacláide	seacláide
-Cadbury's	Cadbury's
+Cadbury's	Cadbury
 !	!
 '	'
 B'in	B'in
@@ -7196,7 +7196,7 @@ an	an
 méid	méid
 a	a
 d'fhógair	d'fhógair
-MAB	MAB
+MAB	MA
 dhúinn	dhúinn
 ag	ag
 am	am
@@ -7263,19 +7263,19 @@ showing	showing
 of	of
 Medea	Medea
 <USER>	<USER>
-🎭	a
+🎭	🎭
 Medea	Medea
 le	le
-Euripides	Euripides
-📆	a
+Euripides	Misspelled but no correction found
+📆	📆
 6	6
 /	/
 11	11
 /	/
 19	19
-🕗	a
+🕗	🕗
 7pm	7pm
-🎫	a
+🎫	🎫
 £	a
 12	12
 /	/
@@ -7315,7 +7315,7 @@ Christmas	Christmas
 a	a
 day	day
 of	of
-relaxation	relaxation
+relaxation	relation
 for	for
 mná	mná
 <HASHTAG>	<HASHTAG>
@@ -7348,7 +7348,7 @@ bhí	bhí
 i	i
 gcoinne	gcoinne
 an	an
-preasagallaimh	preasagallaimh
+preasagallaimh	preasagallamh
 faoi	faoi
 agallamh	agallamh
 ?	?
@@ -7380,7 +7380,7 @@ mhór	mhór
 ,	,
 ach	ach
 """"	""""
-cleaned	cleaned
+cleaned	clean
 up	up
 """"	""""
 :	:
@@ -7402,7 +7402,7 @@ in	in
 áit	áit
 """"	""""
 níos	níos
-mú	mú
+mú	lú
 """"	""""
 agus	agus
 mar	mar
@@ -7441,7 +7441,7 @@ ná	ná
 Féile	Féile
 na	na
 Mí	Mí
-❤️	Misspelled but no correction found
+❤️	❤️
 \n	\n
 <USER>	<USER>
 <USER>	<USER>
@@ -7458,7 +7458,7 @@ theacht	theacht
 é	é
 seo	seo
 a	a
-riont	riont
+riont	hionú
 !	!
 \n	\n
 <USER>	<USER>
@@ -7522,17 +7522,17 @@ air	air
 rìbìn	ribín
 ar	ar
 an	an
-mbicycle	mbicycle
+mbicycle	bhicycle
 .	.
-mì	mì
+mì	mé
 thròcaireach	trócaireach
 sna	sna
 Dèise	Déise
 .	.
-😁	a
-😁	a
-😎	a
-🏒	a
+😁	😁
+😁	😁
+😎	😎
+🏒	🏒
 \n	\n
 <USER>	<USER>
 <USER>	<USER>
@@ -7571,7 +7571,7 @@ I	I
 bhfad	bhfad
 uainn	uainn
 a	a
-chual	chual
+chual	chur
 cnámh	cnámh
 !	!
 <HASHTAG>	<HASHTAG>
@@ -7615,7 +7615,7 @@ stiúideó	stiúideó
 .	.
 \n	\n
 <USER>	<USER>
-kunis	cunúis
+kunis	bunus
 atá	atá
 tú	tú
 ?	?
@@ -7644,12 +7644,12 @@ acu	acu
 go	go
 léir	léir
 !	!
-🍦	a
-🍭	a
-🍦	a
-🍭	a
-🍦	a
-🍭	a
+🍦	🍦
+🍭	🍭
+🍦	🍦
+🍭	🍭
+🍦	🍦
+🍭	🍭
 <URL>	<URL>
 \n	\n
 Ag	Ag
@@ -7682,7 +7682,7 @@ bun	bun
 na	na
 spéire	spéire
 !	!
-👌	a
+👌	👌
 \n	\n
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
@@ -7726,7 +7726,7 @@ Cén	Cén
 brí	brí
 atá	atá
 ag	ag
-touirni	fourni
+touirni	toirní
 le	le
 do	do
 thoil	thoil
@@ -7751,7 +7751,7 @@ as	as
 .	.
 Baineann	Baineann
 siad	siad
-mí-usaid	mí-usaid
+mí-usaid	mí-úsáid
 asainn	asainn
 \n	\n
 <USER>	<USER>
@@ -7869,7 +7869,7 @@ dearfach	dearfach
 go	go
 bheith	bheith
 an	an
-Féilé	Féire
+Féilé	Fhile
 Naisiúnta	Naisiúnta
 Dramaíochta	Dramaíochta
 ag	ag
@@ -7892,7 +7892,7 @@ an-áicbheard	Misspelled but no correction found
 tá	tá
 ar	ar
 an	an
-GOOG	GOO
+GOOG	Misspelled but no correction found
 tosnú	tosnú
 ar	ar
 an	an
@@ -7901,7 +7901,7 @@ sitcoms	Misspelled but no correction found
 \n	\n
 An	An
 clár	clár
-seachtainiúl	seachtainiúl
+seachtainiúl	seachtainiúil
 cúrsaí	cúrsaí
 reatha	reatha
 is	is
@@ -7909,7 +7909,7 @@ fearr	fearr
 liom	liom
 ,	,
 i	i
-nGaelige	nGaelige
+nGaelige	nGaeilg
 ,	,
 nó	nó
 i	i
@@ -7931,7 +7931,7 @@ Cad	Cad
 faoi	faoi
 mír	mír
 ar	ar
-thionchur	thionchur
+thionchur	thionchar
 beartas	beartas
 fuinnimh	fuinnimh
 /	/
@@ -7980,7 +7980,7 @@ treibheanna	treibheanna
 traidisiúnta	traidisiúnta
 .	.
 (	(
-Hipsters	Hipsters
+Hipsters	sisters
 ,	,
 i	i
 bhfocail	bhfocail
@@ -7999,8 +7999,8 @@ mbaireadh	mbaileodh
 sí	sí
 an	an
 cead	cead
-👊🏻	Misspelled but no correction found
-🇮🇪	Misspelled but no correction found
+👊🏻	👊🏻
+🇮🇪	🇮🇪
 \n	\n
 Sraith	Sraith
 nua	nua
@@ -8028,7 +8028,7 @@ linn	linn
 <USER>	<USER>
 .	.
 \n	\n
-Puh	Puth
+Puh	Pub
 gaoithe	gaoithe
 níl	níl
 ann	ann
@@ -8038,7 +8038,7 @@ sé	sé
 ar	ar
 nós	nós
 go	go
-dtiteamar	thiteamar
+dtiteamar	Misspelled but no correction found
 inár	inár
 gcodladh	gcodladh
 ar	ar
@@ -8047,7 +8047,7 @@ cúpla	cúpla
 mí	mí
 agus	agus
 go	go
-ndúisíomar	ndúiseofar
+ndúisíomar	ndúisítear
 i	i
 mí	mí
 Aibreán	Aibreán
@@ -8132,7 +8132,7 @@ Ceannais	Ceannais
 Craobh	Craobh
 Sóisear	Sóisear
 A	A
-02ú	02ú
+02ú	20ú
 nóiméad	nóiméad
 dara	dara
 leath	leath
@@ -8140,7 +8140,7 @@ Na	Na
 Dúnaibh	Dúnaibh
 3.5	3.5
 Roibéard	Roibéard
-Emeíd	Emeíd
+Emeíd	Emer
 0.3	0.3
 \n	\n
 <USER>	<USER>
@@ -8226,7 +8226,7 @@ sibh	sibh
 ,	,
 <USER>	<USER>
 !	!
-🐊	a
+🐊	🐊
 <URL>	<URL>
 via	via
 <USER>	<USER>
@@ -8354,14 +8354,14 @@ sin	sin
 ná	ná
 habair	habair
 é	é
-🎄	a
+🎄	🎄
 sláinte	sláinte
 agus	agus
-beanacht	beanacht
+beanacht	beannacht
 .	.
 \n	\n
 <USER>	<USER>
-Armadailín	Armadailín
+Armadailín	Misspelled but no correction found
 na	na
 Féile	Féile
 .	.
@@ -8373,7 +8373,7 @@ Lá	Lá
 <HASHTAG>	<HASHTAG>
 Abhainn	Abhainn
 an	an
-Mhuaigh	Muaidh
+Mhuaigh	Mhúraigh
 &	&
 Caisleán	Caisleán
 Belleck	Belle
@@ -8386,7 +8386,7 @@ Maigh	Maigh
 Eo	Eo
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
-🍸	a
+🍸	🍸
 Ní	Ní
 raibh	raibh
 na	na
@@ -8400,7 +8400,7 @@ chraic	chraic
 go	go
 maith	maith
 !	!
-😊	a
+😊	😊
 <URL>	<URL>
 \n	\n
 Tá	Tá
@@ -8511,7 +8511,7 @@ Eolas	Eolas
 agus	agus
 treoir	treoir
 ón	ón
-síciteiripeoir	síciteiripeoir
+síciteiripeoir	Misspelled but no correction found
 Eileen	Eileen
 Ní	Ní
 Shuilleabháin	Shuilleabháin
@@ -8626,7 +8626,7 @@ abú	abú
 <URL>	<URL>
 \n	\n
 A	A
-Chomradaithe	Chomradaithe
+Chomradaithe	chomrádaithe
 ,	,
 la	la
 fhéile	fhéile
@@ -8678,14 +8678,14 @@ a	a
 chur	chur
 isteach	isteach
 -	-
-friendships	friendships
+friendships	friendship
 like	like
 this	this
 take	take
 TLC	TLC
 !	!
 <HASHTAG>	<HASHTAG>
-😂	a
+😂	😂
 \n	\n
 <USER>	<USER>
 <USER>	<USER>
@@ -8721,7 +8721,7 @@ ar	ar
 cuairt	cuairt
 agam	agam
 i	i
-mBolzano	Bolzano
+mBolzano	Misspelled but no correction found
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -8769,10 +8769,10 @@ na	na
 trá	trá
 báine	báine
 .	.
-🌊	a
+🌊	🌊
 \n	\n
 Very	Very
-chatty	chatty
+chatty	chaith
 birds	birds
 in	in
 Dún	Dún
@@ -8786,7 +8786,7 @@ seo	seo
 a	a
 shárú	shárú
 !	!
-😍	a
+😍	😍
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
 <HASHTAG>	<HASHTAG>
@@ -8812,7 +8812,7 @@ chamógaíochta	chamógaíochta
 fé	fé
 16.5	16.5
 a	a
-d’imir	dimir
+d’imir	deifir
 thar	thar
 barr	barr
 i	i
@@ -8843,9 +8843,9 @@ deiridh	deiridh
 Maith	Maith
 sibh	sibh
 cailíní	cailíní
-🔵	a
+🔵	🔵
 ⚪️	Misspelled but no correction found
-🔵	a
+🔵	🔵
 ⚪️	Misspelled but no correction found
 <URL>	<URL>
 \n	\n
@@ -8942,14 +8942,14 @@ swiftboating	Misspelled but no correction found
 .	.
 .	.
 .	.
-☺	a
+☺	☺
 \n	\n
 '	'
 Gan	Gan
 gáire	gáire
 fá	fá
 ghníomhradh	ghníomhach
-leinbh	leinbh
+leinbh	leith
 ,	,
 cosc	cosc
 ar	ar
@@ -8957,12 +8957,12 @@ cheol	cheol
 ,	,
 glas	glas
 ar	ar
-Ghaoidheilg	Gaoidheilge
+Ghaoidheilg	Misspelled but no correction found
 '	'
 -	-
 Aindrias	Aindrias
 Mac	Mac
-Marcais	Marcais
+Marcais	arais
 ,	,
 Talamh	Talamh
 Bánaithe	Bánaithe
@@ -9034,8 +9034,8 @@ an	an
 baol	baol
 !	!
 ”	a
-👴🏻	Misspelled but no correction found
-👵🏻	Misspelled but no correction found
+👴🏻	👴🏻
+👵🏻	👵🏻
 vs	vs
 .	.
 “	a
@@ -9109,7 +9109,7 @@ fearr	fearr
 ar	ar
 aon	aon
 ghalar	ghalar
-😉	a
+😉	😉
 Go	Go
 raibh	raibh
 míle	míle
@@ -9117,7 +9117,7 @@ maith	maith
 agaibh	agaibh
 beirt	beirt
 !	!
-🤠	a
+🤠	🤠
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -9225,8 +9225,8 @@ an-taitneamh	an-taitneamh
 as	as
 an	an
 lá	lá
-🎅	a
-🤶	a
+🎅	🎅
+🤶	🤶
 <USER>	<USER>
 <URL>	<URL>
 \n	\n
@@ -9289,7 +9289,7 @@ bith	bith
 in	in
 Éirinn	Éirinn
 !	!
-😯	a
+😯	😯
 \n	\n
 Seo	Seo
 na	na
@@ -9368,7 +9368,7 @@ sléibhe	sléibhe
 Go	Go
 háirithe	háirithe
 i	i
-dturadh	dtrach
+dturadh	dtoradh
 mar	mar
 seo	seo
 is	is
@@ -9440,7 +9440,7 @@ i	i
 bhfoisceacht	bhfoisceacht
 <HASHTAG>	<HASHTAG>
 de	de
-m’áit	mháir
+m’áit	n-áit
 chónaithe	chónaithe
 .	.
 <HASHTAG>	<HASHTAG>
@@ -9458,16 +9458,16 @@ agus	agus
 <USER>	<USER>
 ar	ar
 <USER>	<USER>
-🎙️	Misspelled but no correction found
-🎙️	Misspelled but no correction found
-🎙️	Misspelled but no correction found
-🎙️	Misspelled but no correction found
-🎙️	Misspelled but no correction found
-🎧	a
-🎧	a
-🎧	a
-🎧	a
-🎧	a
+🎙️	🎙️
+🎙️	🎙️
+🎙️	🎙️
+🎙️	🎙️
+🎙️	🎙️
+🎧	🎧
+🎧	🎧
+🎧	🎧
+🎧	🎧
+🎧	🎧
 <URL>	<URL>
 \n	\n
 <USER>	<USER>
@@ -9494,7 +9494,7 @@ a	a
 bheith	bheith
 agam	agam
 !	!
-⏱	a
+⏱	⏱
 \n	\n
 Rinne	Rinne
 m'iníon	m'iníon
@@ -9575,7 +9575,7 @@ ag	ag
 feirm	feirm
 Martin	Martin
 agus	agus
-Jacquie	Jacquie
+Jacquie	Jacques
 Lynskey	Lynskey
 inniu	inniu
 .	.
@@ -9592,9 +9592,9 @@ iontu	iontu
 Scaoil	Scaoil
 amach	amach
 é	é
-😄	a
-😄	a
-😄	a
+😄	😄
+😄	😄
+😄	😄
 \n	\n
 Eddie	Eddie
 Brennan	Brennan
@@ -9689,7 +9689,7 @@ Tá	Tá
 fáilte	fáilte
 romhat	romhat
 comrádaí	comrádaí
-👍	a
+👍	👍
 \n	\n
 Nuacht	Nuacht
 is	is
@@ -9926,7 +9926,7 @@ Gaoth	Gaoth
 :	:
 Aduaidh	Aduaidh
 (	(
-39km	39km
+39km	9km
 /	/
 h	h
 )	)
@@ -9993,7 +9993,7 @@ hEmojis	hEmojis
 <HASHTAG>	<HASHTAG>
 <USER>	<USER>
 <USER>	<USER>
-😍	a
+😍	😍
 \n	\n
 <USER>	<USER>
 Easpa	Easpa
@@ -10014,7 +10014,7 @@ mór	mór
 dóibh	dóibh
 .	.
 Ár	Ár
-mótarchánacha	mótarchánach
+mótarchánacha	Misspelled but no correction found
 is	is
 é	é
 .	.
