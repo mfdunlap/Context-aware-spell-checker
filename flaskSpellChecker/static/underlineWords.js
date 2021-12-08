@@ -70,11 +70,6 @@ $(document).ready(function () {
 });
 
 
-function replaceMisspelling(text, replacedWord, replacedWordIndex){  
-  textSingleton.getPlainText.split(" ")
-  textSingleton.updateHtmlTokens[replacedWordIndex] = '<span style="text-decoration: underline 2px red;">' + replacedWord + '</span>&nbsp;'
-}
-
 function searchStringInArray (str, strArray) {
   for (var j=0; j<strArray.length; j++) {
       if (strArray[j].match(str)) return true;

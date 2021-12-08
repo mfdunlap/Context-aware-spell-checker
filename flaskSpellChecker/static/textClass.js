@@ -25,20 +25,20 @@ class textClass {
       // Update text variable and fill the words' object array with the text area words
   
       this.#text = text;
-      //console.log("text input", text)
-      //console.log("text split", text.split(/\s|(&nbsp)/))
+      console.log("text input", text)
+      console.log("text split", text.split(/\s/))
   
       text.split(/\s/).forEach((word,i) => {
-        if(!(this.#words.some(obj => obj.index==i))){
+        //if(!(this.#words.some(obj => obj.index==i && obj.word==word))){
           if (word != /s/){
-          this.#words.push({
+          this.#words[i] = {
             'word': word,
             'index': i,
             'html': word,
-            })
-          //console.log("Push word "+word+" with index "+i)
+            }
+          console.log("Insert word "+word+" with index "+i)
           }
-        }
+      //  }
       })
     }
   
@@ -91,6 +91,14 @@ class textClass {
         console.log("Object: ",word['word'] + "\n" + word['index'] + "\n" + word['html'])
         })
     }
+
+    pushWord(word, index, html){
+      this.#words.push({
+        "word": word,
+        "index": index,
+        "html": html
+      })
+    }
   
     updateMisspelledWords(misspelledWordsList) {
       // Replace the html field of the misspelled word objects
@@ -117,7 +125,7 @@ class textClass {
       document.getElementById("textArea").innerHTML = textSingleton.getHtmlText().join("&nbsp")
     }
   
-    getWordIndex(word){
+    getIndexbyWord(word){
       for(var i=0; i<=this.#textIndexes.length; i++){
         if (this.#textIndexes[i].match(word)){
           return i;

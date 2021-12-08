@@ -9,7 +9,7 @@ To include in your html code:
 $(document).ready(function () {
   // Set cursor to hand to show that area is clickable
   var textArea = $("#textArea");
-  textArea.css({ cursor: 'pointer' });
+  textArea.css({ cursor: 'pointer'});
   var textAreaElement = document.getElementById("textArea")
   // Get word on double click
   textArea.dblclick(function (event) {
@@ -160,7 +160,11 @@ function replaceMisspellingWithItem(misspellingIndex, item) {
   // Change the word within the global text istance and its html code
   textSingleton.replaceMisspelledWithCorrection(correction, misspellingIndex)
   // Replace the old html text with the new one (with the correction)
+  if($("#textArea").text().length != textSingleton.getPlainText().length)
+    textSingleton.updateText($("#textArea").text())
+  
   textSingleton.replaceHtmlText()
+  textSingleton.printWordList()
 }
 
 function hideMenu(menu) {
