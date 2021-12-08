@@ -1,13 +1,20 @@
-from dictionary import Dictionary
+from flaskSpellChecker.dictionary import Dictionary
+from flaskSpellChecker import utils
 import csv
-import utils
+import os
 
 if __name__ == "__main__":
-    ga = Dictionary('ga', 50000)
+    print(os.getcwd())
+    ga = Dictionary('ga', 500000)
     
-    filePath = 'testFiles/testset/input.txt'
-    answerPath = 'testFiles/testset/betaTest_answers.tsv'
-    solutionsPath = 'testFiles/testset/corrections500.tsv'
+    dirRoot = 'flaskSpellChecker/testFiles/testset/'
+    filePath = dirRoot + 'input.txt'
+    answerPath = dirRoot + 'betaTest_answers.tsv'
+    solutionsPath = dirRoot + 'corrections500.tsv'
+
+    #dirRoot = 'flaskSpellChecker/testFiles/input-test/'
+    #filePath = dirRoot + 'input-test.txt'
+    #answerPath = dirRoot + 'betaTest_answersFINAL.tsv'
 
     # Generate answers:
     with open(filePath, newline='\n', encoding='utf-8') as file:
@@ -39,8 +46,8 @@ if __name__ == "__main__":
             answerList.append(answer)
             counter += 1
             
-            if(i%1000 == 0):
-                print(str((i%1000)*10) + "% Complete")
+            if(i%6000 == 0):
+                print(str(int(i/600)) + "% Complete")
 
         print("Same number of answers and tokens:", counter == numWords)
         
@@ -76,5 +83,4 @@ if __name__ == "__main__":
 
     totalCorrections = len(ourAnswerKey)    
     print("Percent Correct:", 100 * correctAnswers / totalCorrections)
-
-
+    
