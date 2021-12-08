@@ -1,9 +1,11 @@
 import configparser
+import emoji
 from spellchecker import SpellChecker
 import string
 import re
 from flaskSpellChecker.dictionary import Dictionary
 from emoji import UNICODE_EMOJI
+import unicodedata
 
 def simpleChecker(text):
     
@@ -91,6 +93,7 @@ def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
 
     correctionsList = list()
     freqDict = dictionary.getWordFreq()
+    word = unicodedata.normalize('NFC', word)
     lenWord = len(word)
 
     # Determine appropriate edit distance from length of the word
@@ -108,7 +111,8 @@ def spellCheckWord(dictionary, word, prevWord="", nextWord=""):
     wordIsPunct = all(c in punct for c in word)
 
     #Check if word is emoji:
-    wordIsEmoji = word in UNICODE_EMOJI
+    emojis = [unicodedata.normalize('NFC',emote) for emote in UNICODE_EMOJI['en'].keys()]
+    wordIsEmoji = word in emojis
 
     # Check if word is correctly spelled:
     word = word.strip(punct)
@@ -215,7 +219,7 @@ def rankCorrections(dictionary, possibilities, prevWord="", nextWord=""):
 
 if __name__ == "__main__":
     text = ""
-    ga = Dictionary('ga')
+    #ga = Dictionary('ga')
 
     #    irishDict, prevDict, nextDict = generateIrishDictionary()
     #    print("Word: an")
@@ -241,9 +245,9 @@ if __name__ == "__main__":
     #print("Mispellings:", misspellings)
     #print("Indices:", index)
 
-    while (text != "exit"):
-        text = str(input("Enter text to spell check (Irish): "))
-        misppellings, indicies = spellCheckText(ga, text)
-        print("Misspellings:", misppellings)
-        print("Indices of Mispellings:", indicies)
-        print()
+    #while (text != "exit"):
+        #text = str(input("Enter text to spell check (Irish): "))
+        #misppellings, indicies = spellCheckText(ga, text)
+        #print("Misspellings:", misppellings)
+        #print("Indices of Mispellings:", indicies)
+        #print()

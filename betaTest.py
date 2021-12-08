@@ -5,16 +5,18 @@ import os
 
 if __name__ == "__main__":
     print(os.getcwd())
-    ga = Dictionary('ga', 500000)
+    ga = Dictionary('ga', 100000)
     
     dirRoot = 'flaskSpellChecker/testFiles/testset/'
     filePath = dirRoot + 'input.txt'
     answerPath = dirRoot + 'betaTest_answers.tsv'
     solutionsPath = dirRoot + 'corrections500.tsv'
+    numTests = 10000
 
     #dirRoot = 'flaskSpellChecker/testFiles/input-test/'
     #filePath = dirRoot + 'input-test.txt'
     #answerPath = dirRoot + 'betaTest_answersFINAL.tsv'
+    #numTests = 59000
 
     # Generate answers:
     with open(filePath, newline='\n', encoding='utf-8') as file:
@@ -46,8 +48,8 @@ if __name__ == "__main__":
             answerList.append(answer)
             counter += 1
             
-            if(i%6000 == 0):
-                print(str(int(i/600)) + "% Complete")
+            if(i%(numTests/10) == 0):
+                print(str(int(i/(numTests/100))) + "% Complete")
 
         print("Same number of answers and tokens:", counter == numWords)
         
